@@ -7,4 +7,7 @@ type Gateway interface {
 
 	Self() Device
 	Devices() []Device
+
+	Start() error
+	Stop() error
 }
