@@ -1,7 +1,9 @@
 package da
 
+import "context"
+
 type Gateway interface {
-	ReadEvent() (interface{}, error)
+	ReadEvent(context.Context) (interface{}, error)
 
 	Capability(Capability) interface{}
 
