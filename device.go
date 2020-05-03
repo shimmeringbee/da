@@ -7,8 +7,8 @@ type Device struct {
 }
 
 func (d Device) HasCapability(needle Capability) bool {
-	for _, heystack := range d.Capabilities {
-		if heystack == needle {
+	for _, haystack := range d.Capabilities {
+		if haystack == needle {
 			return true
 		}
 	}
