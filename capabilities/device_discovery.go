@@ -9,7 +9,12 @@ import (
 type DeviceDiscovery interface {
 	Allow(context.Context, Device, time.Duration) error
 	Deny(context.Context, Device) error
-	Status(context.Context, Device) (bool, time.Duration)
+	Status(context.Context, Device) (DeviceDiscoveryStatus, error)
+}
+
+type DeviceDiscoveryStatus struct {
+	Discovering       bool
+	RemainingDuration time.Duration
 }
 
 type DeviceDiscoveryAllowed struct {
