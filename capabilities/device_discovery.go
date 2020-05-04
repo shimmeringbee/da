@@ -18,10 +18,10 @@ type DeviceDiscoveryStatus struct {
 }
 
 type DeviceDiscoveryAllowed struct {
-	Device
+	Gateway
 	Duration time.Duration
 }
 
 type DeviceDiscoveryDenied struct {
-	Device
+	Gateway
 }
