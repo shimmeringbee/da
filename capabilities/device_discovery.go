@@ -7,4 +7,5 @@ import (
 type DeviceDiscovery interface {
 	Allow(time.Duration)
 	Deny()
+	Status() (bool, time.Duration)
 }
