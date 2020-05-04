@@ -6,8 +6,8 @@ import (
 )
 
 type DeviceDiscovery interface {
-	Allow(Device, time.Duration)
-	Deny(Device)
+	Allow(Device, time.Duration) error
+	Deny(Device) error
 	Status(Device) (bool, time.Duration)
 }
 
