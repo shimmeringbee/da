@@ -7,8 +7,8 @@ import (
 )
 
 type DeviceDiscovery interface {
-	Allow(context.Context, Device, time.Duration) error
-	Deny(context.Context, Device) error
+	Enable(context.Context, Device, time.Duration) error
+	Disable(context.Context, Device) error
 	Status(context.Context, Device) (DeviceDiscoveryStatus, error)
 }
 
