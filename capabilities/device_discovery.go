@@ -10,8 +10,7 @@ import (
 // are discovered. This may be an active process when the gateway seeks out devices, or passive
 // where the gateway now permits joining of new devices.
 //
-// The presence or absence of this capability does not mean that a gateway can introduce a new
-// device without it being enabled.
+// The absence of this capability does not prevent a gateway autonomously introducing a new device.
 type DeviceDiscovery interface {
 	// Enable device discovery on the gateway for the duration specified, after the duration
 	// has elapsed device discovery will be disabled.
