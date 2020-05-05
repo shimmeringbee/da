@@ -5,5 +5,9 @@ import (
 )
 
 const (
-	DeviceDiscoveryFlag = Capability(0x0000)
+	/* Basic capabilities to permit management of devices. */
+	DeviceDiscoveryFlag       = Capability(0x0000)
+	EnumerateCapabilitiesFlag = Capability(0x0001)
+
+	/* Functional capabilities of devices. */
 )
