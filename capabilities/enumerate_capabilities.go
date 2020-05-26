@@ -12,6 +12,9 @@ import (
 // of having the EnumerateCapabilities capability.
 type EnumerateCapabilities interface {
 	// Enumerate forces the gateway to rescan the device specified and enumerate its capabilities.
+	//
+	// This must not be blocking, errors which occur during enumeration should cause EnumerateCapabilitiesFailed
+	// to be sent, if enumeration could not be recovered.
 	Enumerate(context.Context, Device) error
 }
 
@@ -25,6 +28,8 @@ type EnumerateCapabilitiesBegin struct {
 type EnumerateCapabilitiesFailed struct {
 	// Device that enumeration failed on.
 	Device
+	// Error as to why enumerating capabilities failed.
+	error
 }
 
 // Event sent to inform consumers that capability enumeration has completed on a device.
