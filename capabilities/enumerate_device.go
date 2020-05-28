@@ -30,7 +30,7 @@ type EnumerateDeviceFailure struct {
 	// Device that enumeration failed on.
 	Device
 	// Error as to why enumeration failed.
-	error
+	Error error
 }
 
 // Event sent to inform consumers that enumeration has completed on a device.
