@@ -1,6 +1,6 @@
 package da
 
-import "errors"
+import "github.com/shimmeringbee/zigbee"
 
 // Capability identifier.
 type Capability uint16
@@ -11,10 +11,10 @@ type Identifier interface {
 	String() string
 }
 
-var DeviceDoesNotBelongToGatewayError = errors.New("device does not belong to the gateway")
-var DeviceIsNotGatewaySelfDeviceError = errors.New("capability can only be called on gateway self device")
-var DeviceIsGatewaySelfDeviceError = errors.New("capability can not be called on gateway self device")
-var DeviceDoesNotHaveCapability = errors.New("device does not have capability")
+const DeviceDoesNotBelongToGatewayError = zigbee.Error("device does not belong to the gateway")
+const DeviceIsNotGatewaySelfDeviceError = zigbee.Error("capability can only be called on gateway self device")
+const DeviceIsGatewaySelfDeviceError = zigbee.Error("capability can not be called on gateway self device")
+const DeviceDoesNotHaveCapability = zigbee.Error("device does not have capability")
 
 func DeviceDoesNotBelongToGateway(gateway Gateway, device Device) bool {
 	return device.Gateway != gateway
