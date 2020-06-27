@@ -16,13 +16,13 @@ type LocalDebug interface {
 // Event sent to inform consumers that local debug is beginning on a device.
 type LocalDebugStart struct {
 	// Device that local debug started on.
-	Device
+	Device Device
 }
 
 // Event sent to inform consumers that local debug has completed successfully.
 type LocalDebugSuccess struct {
 	// Device that local debug succeeded on.
-	Device
+	Device Device
 	// Media type of debug information, assuming JSON marshal.
 	MediaType string
 	// Debug payload.
@@ -32,7 +32,7 @@ type LocalDebugSuccess struct {
 // Event sent to inform consumers that local debug has failed.
 type LocalDebugFailure struct {
 	// Device that local debug failed on.
-	Device
+	Device Device
 	// Error describing failure to produce local debug
 	Error error
 }

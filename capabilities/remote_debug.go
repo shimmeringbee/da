@@ -17,13 +17,13 @@ type RemoteDebug interface {
 // Event sent to inform consumers that remote debug is beginning on a device.
 type RemoteDebugStart struct {
 	// Device that remote debug started on.
-	Device
+	Device Device
 }
 
 // Event sent to inform consumers that remote debug has completed successfully.
 type RemoteDebugSuccess struct {
 	// Device that remote debug succeeded on.
-	Device
+	Device Device
 	// Media type of debug information, assuming JSON marshal.
 	MediaType string
 	// Debug payload.
@@ -33,7 +33,7 @@ type RemoteDebugSuccess struct {
 // Event sent to inform consumers that remote debug has failed.
 type RemoteDebugFailure struct {
 	// Device that remote debug failed on.
-	Device
+	Device Device
 	// Error describing failure to produce local debug
 	Error error
 }

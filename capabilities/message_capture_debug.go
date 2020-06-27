@@ -35,19 +35,19 @@ type MessageCaptureDebug interface {
 // Event sent to inform consumers that message capture is beginning on a device.
 type MessageCaptureStart struct {
 	// Device that message capture started on.
-	Device
+	Device Device
 }
 
 // Event sent to inform consumers that message capture is ended on a device.
 type MessageCapture struct {
 	// Device that message capture occurred on.
-	Device
+	Device Device
 	// Captured Message.
-	CapturedMessage
+	Message CapturedMessage
 }
 
 // Event sent to inform consumers that message capture is ended on a device.
 type MessageCaptureStop struct {
 	// Device that message capture stopped on.
-	Device
+	Device Device
 }
