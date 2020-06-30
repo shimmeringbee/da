@@ -11,6 +11,7 @@ const (
 	HasProductInformationFlag = Capability(0x0002)
 
 	/* Functional capabilities of devices. */
+	OnOffFlag = Capability(0x1000)
 
 	/* Developer Functionality. */
 	LocalDebugFlag          = Capability(0xfff0)
