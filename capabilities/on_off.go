@@ -13,9 +13,6 @@ type OnOff interface {
 	// Off turns the device off, no operation if device is already off.
 	Off(context.Context, Device) error
 
-	// Toggle changes the devices state to be opposite, off -> on, on -> off.
-	Toggle(context.Context, Device) error
-
 	// State returns the current device state.
 	State(context.Context, Device) (bool, error)
 }
