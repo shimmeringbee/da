@@ -19,7 +19,7 @@ type OnOff interface {
 
 // OnOffState is sent to inform consumers of the devices on/off state, may be sent even if there is no change.
 type OnOffState struct {
-	// Device that enumeration failed on.
+	// Device that is informing of it's on off state.
 	Device Device
 	// New state of device.
 	State bool
