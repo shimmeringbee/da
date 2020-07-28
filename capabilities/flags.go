@@ -18,6 +18,9 @@ const (
 	LevelFlag            = Capability(0x1001)
 	ColorTemperatureFlag = Capability(0x1002)
 
+	/* Capabilities which humans interact with to provide input. */
+	BasicControllerFlag = Capability(0x1200)
+
 	/* Capabilities to read information from the environment. */
 	TemperatureSensorFlag  = Capability(0x2000)
 	HumiditySensorFlag     = Capability(0x2001)
