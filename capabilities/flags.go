@@ -10,7 +10,8 @@ const (
 	EnumerateDeviceFlag       = Capability(0x0001)
 	HasProductInformationFlag = Capability(0x0002)
 	PowerStatusFlag           = Capability(0x0100)
-	ConnectivityFlag          = Capability(0x0100)
+	ConnectivityFlag          = Capability(0x0101)
+	DeviceAlarmsFlag          = Capability(0x0102)
 
 	/* Capabilities to change the physical state of devices. */
 	OnOffFlag            = Capability(0x1000)
