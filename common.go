@@ -17,9 +17,9 @@ const DeviceIsGatewaySelfDeviceError = zigbee.Error("capability can not be calle
 const DeviceDoesNotHaveCapability = zigbee.Error("device does not have capability")
 
 func DeviceDoesNotBelongToGateway(gateway Gateway, device Device) bool {
-	return device.Gateway != gateway
+	return device.Gateway() != gateway
 }
 
 func DeviceIsNotGatewaySelf(gateway Gateway, device Device) bool {
-	return gateway.Self().Identifier != device.Identifier
+	return gateway.Self().Identifier() != device.Identifier()
 }
