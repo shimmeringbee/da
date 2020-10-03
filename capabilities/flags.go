@@ -22,11 +22,11 @@ const (
 	BasicControllerFlag = Capability(0x1200)
 
 	/* Capabilities to read information from the environment. */
-	TemperatureSensorFlag  = Capability(0x2000)
-	HumiditySensorFlag     = Capability(0x2001)
-	PressureSensorFlag     = Capability(0x2002)
-	PresenceSensorFlag     = Capability(0x2003)
-	IlluminationSensorFlag = Capability(0x2004)
+	TemperatureSensorFlag      = Capability(0x2000)
+	RelativeHumiditySensorFlag = Capability(0x2001)
+	PressureSensorFlag         = Capability(0x2002)
+	PresenceSensorFlag         = Capability(0x2003)
+	IlluminationSensorFlag     = Capability(0x2004)
 
 	/* Capabilities to read information from power systems. */
 	EnergyMeasurementFlag = Capability(0x2100)

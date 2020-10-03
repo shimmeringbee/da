@@ -1,0 +1,19 @@
+package capabilities
+
+import (
+	"context"
+	. "github.com/shimmeringbee/da"
+)
+
+// TemperatureReading is a temperature reading.
+type TemperatureReading struct {
+	// Value contains a floating point number representing the temperature, in Kelvin.
+	Value float32
+}
+
+// TemperatureSensor is a capability that provides temperature readings from a device. Multiple readings can be returned
+// if the device has multiple sensors.
+type TemperatureSensor interface {
+	// Reading reads (or provides the most recent) temperature readings the device has.
+	Reading(context.Context, Device) ([]TemperatureReading, error)
+}
