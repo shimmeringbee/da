@@ -40,3 +40,27 @@ const (
 	RemoteDebugFlag         = Capability(0xff01)
 	MessageCaptureDebugFlag = Capability(0xff20)
 )
+
+var CapabilityName = map[Capability]string{
+	DeviceDiscoveryFlag:        "DeviceDiscovery",
+	EnumerateDeviceFlag:        "EnumerateDevice",
+	HasProductInformationFlag:  "HasProductInformation",
+	PowerStatusFlag:            "PowerStatus",
+	ConnectivityFlag:           "Connectivity",
+	DeviceAlarmsFlag:           "DeviceAlarms",
+	OnOffFlag:                  "OnOff",
+	LevelFlag:                  "Level",
+	ColorTemperatureFlag:       "ColorTemperature",
+	BasicControllerFlag:        "BasicController",
+	TemperatureSensorFlag:      "TemperatureSensor",
+	RelativeHumiditySensorFlag: "RelativeHumiditySensor",
+	PressureSensorFlag:         "PressureSensor",
+	PresenceSensorFlag:         "PresenceSensor",
+	IlluminationSensorFlag:     "IlluminationSensor",
+	EnergyMeasurementFlag:      "EnergyMeasurement",
+	AlarmZoneFlag:              "AlarmZone",
+	AlarmWarningDeviceFlag:     "AlarmWarningDevice",
+	LocalDebugFlag:             "LocalDebug",
+	RemoteDebugFlag:            "RemoteDebug",
+	MessageCaptureDebugFlag:    "MessageCaptureDebug",
+}
