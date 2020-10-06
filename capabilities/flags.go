@@ -41,7 +41,7 @@ const (
 	MessageCaptureDebugFlag = Capability(0xff20)
 )
 
-var CapabilityName = map[Capability]string{
+var StandardNames = map[Capability]string{
 	DeviceDiscoveryFlag:        "DeviceDiscovery",
 	EnumerateDeviceFlag:        "EnumerateDevice",
 	HasProductInformationFlag:  "HasProductInformation",
