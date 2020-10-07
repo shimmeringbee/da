@@ -17,3 +17,11 @@ type PressureSensor interface {
 	// Reading reads (or provides the most recent) pressure readings the device has.
 	Reading(context.Context, Device) ([]PressureReading, error)
 }
+
+// PressureSensorState is sent to inform consumers of the devices pressure values, there may be no change.
+type PressureSensorState struct {
+	// Device that is informing of its pressure readings state.
+	Device Device
+	// New state of device.
+	State []PressureReading
+}

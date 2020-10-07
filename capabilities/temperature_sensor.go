@@ -17,3 +17,11 @@ type TemperatureSensor interface {
 	// Reading reads (or provides the most recent) temperature readings the device has.
 	Reading(context.Context, Device) ([]TemperatureReading, error)
 }
+
+// TemperatureSensorState is sent to inform consumers of the devices temperature values, there may be no change.
+type TemperatureSensorState struct {
+	// Device that is informing of its temperature readings state.
+	Device Device
+	// New state of device.
+	State []TemperatureReading
+}
