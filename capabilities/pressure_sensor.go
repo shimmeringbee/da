@@ -8,7 +8,7 @@ import (
 // PressureReading is an pressure reading.
 type PressureReading struct {
 	// Value contains a floating point number representing the pressure, in pascal.
-	Value float32
+	Value float64
 }
 
 // PressureSensor is a capability that provides pressure readings from a device. Multiple readings can be returned if

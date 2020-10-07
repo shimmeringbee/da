@@ -8,7 +8,7 @@ import (
 // RelativeHumidityReading is a relative humidity reading.
 type RelativeHumidityReading struct {
 	// Value contains a floating point number representing the relative humidity, between 0.0 and 1.0.
-	Value float32
+	Value float64
 }
 
 // RelativeHumiditySensor is a capability that provides the relative humidity readings from a device. Multiple readings

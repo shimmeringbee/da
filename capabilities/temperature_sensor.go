@@ -8,7 +8,7 @@ import (
 // TemperatureReading is a temperature reading.
 type TemperatureReading struct {
 	// Value contains a floating point number representing the temperature, in Kelvin.
-	Value float32
+	Value float64
 }
 
 // TemperatureSensor is a capability that provides temperature readings from a device. Multiple readings can be returned
