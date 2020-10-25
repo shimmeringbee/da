@@ -3,6 +3,6 @@ module github.com/shimmeringbee/da
 go 1.14
 
 require (
-	github.com/shimmeringbee/zigbee v0.0.0-20200616184354-37a78c3b5746
-	github.com/stretchr/testify v1.5.1
+	github.com/shimmeringbee/zigbee v0.0.0-20201025164059-d8035d706a71
+	github.com/stretchr/testify v1.6.1
 )

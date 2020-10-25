@@ -4,7 +4,8 @@ import "context"
 
 // A gateway is a provider of devices and Capability objects to control them
 type Gateway interface {
-	// Read events from the gateway about devices, this must always be serviced.
+	// Read events from the gateway about devices, this must always be serviced. context.DeadlineExceeded will be
+	// returned if the context expires during a read. Use this mechanism if you can not indefinitely wait for an event.
 	ReadEvent(context.Context) (interface{}, error)
 
 	// Retrieve a capability implementation from the gateway, may return nil if capability is not supported.
