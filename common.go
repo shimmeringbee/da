@@ -23,3 +23,8 @@ func DeviceDoesNotBelongToGateway(gateway Gateway, device Device) bool {
 func DeviceIsNotGatewaySelf(gateway Gateway, device Device) bool {
 	return gateway.Self().Identifier() != device.Identifier()
 }
+
+type BasicCapability interface {
+	Capability() Capability
+	Name() string
+}
