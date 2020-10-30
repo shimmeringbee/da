@@ -17,6 +17,15 @@ type EnumerateDevice interface {
 	// This must not be blocking, errors which occur during enumeration should cause EnumerateDeviceFailure
 	// to be sent, if enumeration could not be recovered.
 	Enumerate(context.Context, Device) error
+
+	// Retrieve the current enumeration status for the device.
+	Status(context.Context, Device) (EnumerationStatus, error)
+}
+
+// Status of devices enumeration.
+type EnumerationStatus struct {
+	// True if device is being enumerated.
+	Enumerating bool
 }
 
 // Event sent to inform consumers that enumeration is beginning on a device.
