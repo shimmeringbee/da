@@ -2,6 +2,7 @@ package capabilities
 
 import (
 	"context"
+	"fmt"
 	"github.com/shimmeringbee/da"
 )
 
@@ -10,67 +11,10 @@ type SensorType uint16
 
 // String returns a string representation of the alarm.
 func (z SensorType) String() string {
-	switch z {
-	case General:
-		return "General"
-	case GeneralEmergency:
-		return "GeneralEmergency"
-	case GeneralWarningDevice:
-		return "GeneralWarningDevice"
-	case FireTemperature:
-		return "FireTemperature"
-	case FireIonizing:
-		return "FireIonizing"
-	case FirePhotoelectric:
-		return "FirePhotoelectric"
-	case FireBreakGlass:
-		return "FireBreakGlass"
-	case FirePreAlarm:
-		return "FirePreAlarm"
-	case FireOther:
-		return "FireOther"
-	case GasCarbonMonoxide:
-		return "GasCarbonMonoxide"
-	case GasCarbonDioxide:
-		return "GasCarbonDioxide"
-	case GasOxygen:
-		return "GasOxygen"
-	case GasCombustible:
-		return "GasCombustible"
-	case GasRadon:
-		return "GasRadon"
-	case Radiation:
-		return "Radiation"
-	case SecurityContact:
-		return "SecurityContact"
-	case SecurityMotion:
-		return "SecurityMotion"
-	case SecurityVibration:
-		return "SecurityVibration"
-	case SecurityGlassBreak:
-		return "SecurityGlassBreak"
-	case SecurityOther:
-		return "SecurityOther"
-	case SecurityInfrastructure:
-		return "SecurityInfrastructure"
-	case SecurityPanic:
-		return "SecurityPanic"
-	case SecurityKeypad:
-		return "SecurityKeypad"
-	case HealthFall:
-		return "HealthFall"
-	case DeviceTamper:
-		return "DeviceTamper"
-	case DeviceBatteryLow:
-		return "DeviceBatteryLow"
-	case DeviceBatteryFailure:
-		return "DeviceBatteryFailure"
-	case DeviceMainsFailure:
-		return "DeviceMainsFailure"
-	case DeviceFailure:
-		return "DeviceFailure"
-	default:
-		return "Unknown"
+	if name, found := NameMapping[z]; found {
+		return name
+	} else {
+		return fmt.Sprintf("Unknown")
 	}
 }
 
@@ -112,6 +56,38 @@ const (
 	DeviceMainsFailure   SensorType = 0xf003
 	DeviceFailure        SensorType = 0xf004
 )
+
+var NameMapping = map[SensorType]string{
+	General:                "General",
+	GeneralEmergency:       "GeneralEmergency",
+	GeneralWarningDevice:   "GeneralWarningDevice",
+	FireTemperature:        "FireTemperature",
+	FireIonizing:           "FireIonizing",
+	FirePhotoelectric:      "FirePhotoelectric",
+	FireBreakGlass:         "FireBreakGlass",
+	FirePreAlarm:           "FirePreAlarm",
+	FireOther:              "FireOther",
+	GasCarbonMonoxide:      "GasCarbonMonoxide",
+	GasCarbonDioxide:       "GasCarbonDioxide",
+	GasOxygen:              "GasOxygen",
+	GasCombustible:         "GasCombustible",
+	GasRadon:               "GasRadon",
+	Radiation:              "Radiation",
+	SecurityContact:        "SecurityContact",
+	SecurityMotion:         "SecurityMotion",
+	SecurityVibration:      "SecurityVibration",
+	SecurityGlassBreak:     "SecurityGlassBreak",
+	SecurityOther:          "SecurityOther",
+	SecurityInfrastructure: "SecurityInfrastructure",
+	SecurityPanic:          "SecurityPanic",
+	SecurityKeypad:         "SecurityKeypad",
+	HealthFall:             "HealthFall",
+	DeviceTamper:           "DeviceTamper",
+	DeviceBatteryLow:       "DeviceBatteryLow",
+	DeviceBatteryFailure:   "DeviceBatteryFailure",
+	DeviceMainsFailure:     "DeviceMainsFailure",
+	DeviceFailure:          "DeviceFailure",
+}
 
 // AlarmSensor is a capability that represents a device that is a sensor in an alarm system.
 type AlarmSensor interface {
