@@ -32,7 +32,7 @@ const (
 	EnergyMeasurementFlag = Capability(0x2100)
 
 	/* Alarm Systems. */
-	AlarmZoneFlag          = Capability(0x3000)
+	AlarmSensorFlag        = Capability(0x3000)
 	AlarmWarningDeviceFlag = Capability(0x3001)
 
 	/* Developer Functionality. */
@@ -58,7 +58,7 @@ var StandardNames = map[Capability]string{
 	PresenceSensorFlag:         "PresenceSensor",
 	IlluminationSensorFlag:     "IlluminationSensor",
 	EnergyMeasurementFlag:      "EnergyMeasurement",
-	AlarmZoneFlag:              "AlarmZone",
+	AlarmSensorFlag:            "AlarmSensor",
 	AlarmWarningDeviceFlag:     "AlarmWarningDevice",
 	LocalDebugFlag:             "LocalDebug",
 	RemoteDebugFlag:            "RemoteDebug",
