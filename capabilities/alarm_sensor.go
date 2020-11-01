@@ -116,21 +116,13 @@ const (
 // AlarmSensor is a capability that represents a device that is a sensor in an alarm system.
 type AlarmSensor interface {
 	// Status returns all states on this sensor.
-	Status(context.Context, da.Device) ([]AlarmSensorState, error)
-}
-
-// AlarmSensorState represents an individual alarm sensor state on a alarm sensor.
-type AlarmSensorState struct {
-	// SensorType is the type of sensor that is changing
-	SensorType SensorType
-	// InAlarm is true if that sensor has triggered.
-	InAlarm bool
+	Status(context.Context, da.Device) (map[SensorType]bool, error)
 }
 
 // AlarmSensorUpdate is sent to inform consumers that an AlarmSensors state has changed.
 type AlarmSensorUpdate struct {
 	// Device that has updated state.
 	Device da.Device
-	// States contains a list of all alarm states, including those that have not changed.
-	States []AlarmSensorState
+	// States contains a map of all alarm states, including those that have not changed.
+	States map[SensorType]bool
 }
