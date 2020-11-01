@@ -115,8 +115,8 @@ const (
 
 // AlarmSensor is a capability that represents a device that is a sensor in an alarm system.
 type AlarmSensor interface {
-	// State returns all states on this sensor.
-	State(context.Context, da.Device) ([]AlarmSensorState, error)
+	// Status returns all states on this sensor.
+	Status(context.Context, da.Device) ([]AlarmSensorState, error)
 }
 
 // AlarmSensorState represents an individual alarm sensor state on a alarm sensor.
