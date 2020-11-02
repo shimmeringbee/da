@@ -14,7 +14,7 @@ type OnOff interface {
 	Off(context.Context, Device) error
 
 	// State returns the current device state.
-	State(context.Context, Device) (bool, error)
+	Status(context.Context, Device) (bool, error)
 }
 
 // OnOffState is sent to inform consumers of the devices on/off state, may be sent even if there is no change.
