@@ -55,6 +55,7 @@ const (
 	DeviceBatteryFailure SensorType = 0xf002
 	DeviceMainsFailure   SensorType = 0xf003
 	DeviceFailure        SensorType = 0xf004
+	DeviceTest           SensorType = 0xf010
 )
 
 var NameMapping = map[SensorType]string{
@@ -87,6 +88,7 @@ var NameMapping = map[SensorType]string{
 	DeviceBatteryFailure:   "DeviceBatteryFailure",
 	DeviceMainsFailure:     "DeviceMainsFailure",
 	DeviceFailure:          "DeviceFailure",
+	DeviceTest:             "DeviceTest",
 }
 
 // AlarmSensor is a capability that represents a device that is a sensor in an alarm system.
