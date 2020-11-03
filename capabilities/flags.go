@@ -9,6 +9,7 @@ const (
 	DeviceDiscoveryFlag       = Capability(0x0000)
 	EnumerateDeviceFlag       = Capability(0x0001)
 	HasProductInformationFlag = Capability(0x0002)
+	DeviceRemovalFlag         = Capability(0x0003)
 	PowerStatusFlag           = Capability(0x0100)
 	ConnectivityFlag          = Capability(0x0101)
 	DeviceAlarmsFlag          = Capability(0x0102)
@@ -45,6 +46,7 @@ var StandardNames = map[Capability]string{
 	DeviceDiscoveryFlag:        "DeviceDiscovery",
 	EnumerateDeviceFlag:        "EnumerateDevice",
 	HasProductInformationFlag:  "HasProductInformation",
+	DeviceRemovalFlag:          "DeviceRemoval",
 	PowerStatusFlag:            "PowerStatus",
 	ConnectivityFlag:           "Connectivity",
 	DeviceAlarmsFlag:           "DeviceAlarms",
