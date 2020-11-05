@@ -24,7 +24,8 @@ type PowerStatusPresent uint
 const (
 	Voltage PowerStatusPresent = 1 << iota
 	Frequency
-	NominalVoltage
+	MaximumVoltage
+	MinimumVoltage
 	Remaining
 	Available
 )
@@ -46,8 +47,10 @@ type PowerMainsStatus struct {
 type PowerBatteryStatus struct {
 	// Voltage of battery.
 	Voltage float64
-	// NominalVoltage of battery.
-	NominalVoltage float64
+	// MaximumVoltage of battery.
+	MaximumVoltage float64
+	// MinimumVoltage of battery, i.e. empty or unable to support device.
+	MinimumVoltage float64
 
 	// Remaining ratio of battery, 0.0 at empty, 1.0 at full charge.
 	Remaining float64
