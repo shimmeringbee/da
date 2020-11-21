@@ -33,11 +33,11 @@ const (
 // AlarmWarningDevice is a capability that represents a device that is a warning device or alert mechanism in an alarm system.
 type AlarmWarningDevice interface {
 	// Alarm turns on warning device.
-	Alarm(context.Context, da.Device, AlarmType, float64, bool, time.Duration)
+	Alarm(context.Context, da.Device, AlarmType, float64, bool, time.Duration) error
 	// Clear turns off warning device.
-	Clear(context.Context, da.Device)
+	Clear(context.Context, da.Device) error
 	// Alert causes a brief warning to be made.
-	Alert(context.Context, da.Device, AlarmType, AlertType, float64, bool)
+	Alert(context.Context, da.Device, AlarmType, AlertType, float64, bool) error
 	// Status returns the state of the warning device.
 	Status(context.Context, da.Device) (WarningDeviceState, error)
 }
