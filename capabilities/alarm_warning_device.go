@@ -9,6 +9,22 @@ import (
 // AlertType represents a type of alert a warning device can make.
 type AlertType uint8
 
+func (a AlertType) String() string {
+	if name, found := AlertTypeNameMapping[a]; found {
+		return name
+	} else {
+		return "Unknown"
+	}
+}
+
+var AlertTypeNameMapping = map[AlertType]string{
+	GeneralAlert:  "General",
+	PreAlarmAlert: "PreAlarm",
+	ArmAlert:      "Arm",
+	DisarmAlert:   "Disarm",
+	FaultAlert:    "Fault",
+}
+
 const (
 	GeneralAlert  AlertType = 0x00
 	PreAlarmAlert AlertType = 0x01
