@@ -20,6 +20,14 @@ const (
 // AlarmType represents the type of alarm, that may result in different sounds or visual patters/colours.
 type AlarmType uint16
 
+func (a AlarmType) String() string {
+	if name, found := AlarmTypeNameMapping[a]; found {
+		return name
+	} else {
+		return "Unknown"
+	}
+}
+
 const (
 	GeneralAlarm       AlarmType = 0x0000
 	FireAlarm          AlarmType = 0x0001
@@ -28,7 +36,19 @@ const (
 	PanicAlarm         AlarmType = 0x0004
 	TamperAlarm        AlarmType = 0x0005
 	DeviceFaultAlarm   AlarmType = 0x0006
+	HealthAlarm        AlarmType = 0x0007
 )
+
+var AlarmTypeNameMapping = map[AlarmType]string{
+	GeneralAlarm:       "General",
+	FireAlarm:          "Fire",
+	SecurityAlarm:      "Security",
+	EnvironmentalAlarm: "Environmental",
+	PanicAlarm:         "Panic",
+	TamperAlarm:        "Tamper",
+	DeviceFaultAlarm:   "DeviceFault",
+	HealthAlarm:        "Health",
+}
 
 // AlarmWarningDevice is a capability that represents a device that is a warning device or alert mechanism in an alarm system.
 type AlarmWarningDevice interface {
