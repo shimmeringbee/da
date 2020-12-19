@@ -8,10 +8,13 @@ import (
 )
 
 // ConvertibleColor is an interface that allows acceptance of a color implementation that supports
-// modes required by
+// modes required by a device.
 type ConvertibleColor interface {
+	// HueSat returns Hue and Saturation, converted from an internal format if required.
 	HueSat() (float64, float64)
+	// XY returns X and Y in the CIE 1931 colour space, converted from an internal format if required.
 	XY() (float64, float64)
+	// Color returns a Go color representing sRGB, converted from an internal format if required.
 	Color() color.Color
 }
 
