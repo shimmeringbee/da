@@ -15,9 +15,9 @@ const (
 	DeviceAlarmsFlag          = Capability(0x0102)
 
 	/* Capabilities to change the physical state of devices. */
-	OnOffFlag            = Capability(0x1000)
-	LevelFlag            = Capability(0x1001)
-	ColorTemperatureFlag = Capability(0x1002)
+	OnOffFlag = Capability(0x1000)
+	LevelFlag = Capability(0x1001)
+	ColorFlag = Capability(0x1002)
 
 	/* Capabilities which humans interact with to provide input. */
 	BasicControllerFlag = Capability(0x1200)
