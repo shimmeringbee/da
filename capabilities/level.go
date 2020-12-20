@@ -24,3 +24,11 @@ type LevelStatus struct {
 	// DurationRemaining is how long until CurrentLevel transitions to TargetLevel.
 	DurationRemaining time.Duration
 }
+
+// LevelStatusUpdate is sent to inform consumers of the devices level state, may be sent even if there is no change.
+type LevelStatusUpdate struct {
+	// Device that is informing of it's on off state.
+	Device Device
+	// New state of device.
+	State LevelStatus
+}
