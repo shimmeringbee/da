@@ -2,10 +2,12 @@ github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/lucasb-eyer/go-colorful v1.0.3 h1:QIbQXiugsb+q10B+MI+7DI1oQLdmnep86tWFlaaUAac=
+github.com/lucasb-eyer/go-colorful v1.0.3/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/shimmeringbee/zigbee v0.0.0-20201025164059-d8035d706a71 h1:tPqsPIbaKd/9oj0V3zMJuJIqKuAjK7vki9zhSTpw7m8=
-github.com/shimmeringbee/zigbee v0.0.0-20201025164059-d8035d706a71/go.mod h1:GMA6rVpzvUK16cZwi8uW11JUTx8xUGOk5DbkXYWvm/8=
+github.com/shimmeringbee/zigbee v0.0.0-20201027194100-4e53cafc0f7a h1:PNZqpjc7ouHQ1MKqerPNNeLOcTsXWZ0ZF9avU8LG9Es=
+github.com/shimmeringbee/zigbee v0.0.0-20201027194100-4e53cafc0f7a/go.mod h1:GMA6rVpzvUK16cZwi8uW11JUTx8xUGOk5DbkXYWvm/8=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.3.0 h1:NGXK3lHquSN08v5vWalVI/L8XU9hdzE/G6xsrze47As=
 github.com/stretchr/objx v0.3.0/go.mod h1:qt09Ya8vawLte6SNmTgCsAVtYtaKzEcn8ATUoHMkEqE=
