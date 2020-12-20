@@ -52,7 +52,7 @@ var StandardNames = map[Capability]string{
 	DeviceAlarmsFlag:           "DeviceAlarms",
 	OnOffFlag:                  "OnOff",
 	LevelFlag:                  "Level",
-	ColorTemperatureFlag:       "ColorTemperature",
+	ColorFlag:                  "Color",
 	BasicControllerFlag:        "BasicController",
 	TemperatureSensorFlag:      "TemperatureSensor",
 	RelativeHumiditySensorFlag: "RelativeHumiditySensor",
