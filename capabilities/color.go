@@ -37,21 +37,27 @@ type ColorStatus struct {
 	// Mode is the current color mode.
 	Mode Mode
 	// Color information if the Mode is ColorMode.
-	Color struct {
-		// Current color of the device.
-		Current color.ConvertibleColor
-		// Target color of the device.
-		Target color.ConvertibleColor
-	}
+	Color ColorSettings
 	// Temperature information if the Mode is TemperatureMode.
-	Temperature struct {
-		// Current temperature of the device.
-		Current float64
-		// Target temperature of the device.
-		Target float64
-	}
+	Temperature TemperatureSettings
 	// DurationRemaining is how long until Current transitions to Target.
 	DurationRemaining time.Duration
+}
+
+// ColorSettings holds the current color and target color.
+type ColorSettings struct {
+	// Current color of the device.
+	Current color.ConvertibleColor
+	// Target color of the device.
+	Target color.ConvertibleColor
+}
+
+// TemperatureSettings holds the current color temperature and target color temperature.
+type TemperatureSettings struct {
+	// Current temperature of the device.
+	Current float64
+	// Target temperature of the device.
+	Target float64
 }
 
 // ColorStatusUpdate is sent to inform consumers of the devices color state, may be sent even if there is no change.
