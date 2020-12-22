@@ -53,3 +53,11 @@ type ColorStatus struct {
 	// DurationRemaining is how long until Current transitions to Target.
 	DurationRemaining time.Duration
 }
+
+// ColorStatusUpdate is sent to inform consumers of the devices color state, may be sent even if there is no change.
+type ColorStatusUpdate struct {
+	// Device that is informing of it's on off state.
+	Device da.Device
+	// New state of device.
+	State ColorStatus
+}
