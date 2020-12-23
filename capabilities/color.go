@@ -49,7 +49,7 @@ type ColorSettings struct {
 	// Current color of the device.
 	Current color.ConvertibleColor
 	// Target color of the device.
-	Target *color.ConvertibleColor
+	Target color.ConvertibleColor
 }
 
 // TemperatureSettings holds the current color temperature and target color temperature.
