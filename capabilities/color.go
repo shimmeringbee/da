@@ -15,9 +15,9 @@ type Color interface {
 	// ChangeTemperature changes the output of the device to be that temperature over the duration specified.
 	ChangeTemperature(context.Context, da.Device, float64, time.Duration) error
 	// SupportsColor if the device supports outputting a color.
-	SupportsColor() bool
+	SupportsColor(ctx context.Context, device da.Device) bool
 	// SupportsTemperature if the device supports outputting a specific white temperature.
-	SupportsTemperature() bool
+	SupportsTemperature(ctx context.Context, device da.Device) bool
 	// Status returns the current status of Color.
 	Status(context.Context, da.Device) (ColorStatus, error)
 }
