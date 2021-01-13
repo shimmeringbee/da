@@ -30,6 +30,9 @@ type MessageCaptureDebug interface {
 	// Stop stops capturing messages.
 	Stop(context context.Context, device Device) error
 
+	// Status returns the state of device capturing.
+	Status(context context.Context, device Device) (bool, error)
+
 	// Get recently captured messages from device.
 	Get(context context.Context, device Device) ([]MessageCapture, error)
 
