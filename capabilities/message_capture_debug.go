@@ -23,20 +23,26 @@ type CapturedMessage struct {
 // MessageCaptureDebug is a capability which allows capture of the internal protocol of the device abstraction, returned
 // information will always be in a format specific to the abstraction which may be marshalled as JSON.
 type MessageCaptureDebug interface {
-	// StartMessageCapture begins capturing messages for a device, messages continue to be sent until StopMessageCapture
+	// Start begins capturing messages for a device, messages continue to be sent until StopMessageCapture
 	// or the device is no longer present.
-	StartMessageCapture(context context.Context, device Device) error
+	Start(context context.Context, device Device) error
 
-	// StopMessageCapture stops capturing messages.
-	StopMessageCapture(context context.Context, device Device) error
+	// Stop stops capturing messages.
+	Stop(context context.Context, device Device) error
 
-	// EnableMessageCaptureOnJoin enables automatic capturing of messages of new devices that join, only callable on
+	// Get recently captured messages from device.
+	Get(context context.Context, device Device) ([]MessageCapture, error)
+
+	// Clear recently captured messages from device.
+	Clear(context context.Context, device Device) error
+
+	// EnableCaptureOnJoin enables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	EnableMessageCaptureOnJoin(context context.Context) error
+	EnableCaptureOnJoin(context context.Context) error
 
-	// DisableMessageCaptureOnJoin disables automatic capturing of messages of new devices that join, only callable on
+	// DisableCaptureOnJoin disables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	DisableMessageCaptureOnJoin(context context.Context) error
+	DisableCaptureOnJoin(context context.Context) error
 }
 
 // Event sent to inform consumers that message capture is beginning on a device.
