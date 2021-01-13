@@ -41,11 +41,11 @@ type MessageCaptureDebug interface {
 
 	// EnableCaptureOnJoin enables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	EnableCaptureOnJoin(context context.Context) error
+	EnableCaptureOnJoin(context context.Context, device Device) error
 
 	// DisableCaptureOnJoin disables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	DisableCaptureOnJoin(context context.Context) error
+	DisableCaptureOnJoin(context context.Context, device Device) error
 }
 
 // Event sent to inform consumers that message capture is beginning on a device.
