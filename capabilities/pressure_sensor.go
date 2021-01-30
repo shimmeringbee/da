@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 )
 
 // PressureReading is an pressure reading.
@@ -15,13 +15,13 @@ type PressureReading struct {
 // the device has multiple sensors.
 type PressureSensor interface {
 	// Reading reads (or provides the most recent) pressure readings the device has.
-	Reading(context.Context, Device) ([]PressureReading, error)
+	Reading(context.Context, da.Device) ([]PressureReading, error)
 }
 
 // PressureSensorState is sent to inform consumers of the devices pressure values, there may be no change.
 type PressureSensorState struct {
 	// Device that is informing of its pressure readings state.
-	Device Device
+	Device da.Device
 	// New state of device.
 	State []PressureReading
 }

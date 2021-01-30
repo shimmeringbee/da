@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 )
 
 type ProductInformationPresent uint
@@ -22,5 +22,5 @@ type ProductInformation struct {
 }
 
 type HasProductInformation interface {
-	ProductInformation(context.Context, Device) (ProductInformation, error)
+	ProductInformation(context.Context, da.Device) (ProductInformation, error)
 }

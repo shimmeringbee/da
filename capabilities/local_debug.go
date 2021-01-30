@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 )
 
 // LocalDebug is a capability which provides debug information about devices, this includes information that is already
@@ -10,19 +10,19 @@ import (
 // may be marshalled as JSON.
 type LocalDebug interface {
 	// Start returns all locally kept information about the device.
-	Start(context.Context, Device) error
+	Start(context.Context, da.Device) error
 }
 
 // Event sent to inform consumers that local debug is beginning on a device.
 type LocalDebugStart struct {
 	// Device that local debug started on.
-	Device Device
+	Device da.Device
 }
 
 // Event sent to inform consumers that local debug has completed successfully.
 type LocalDebugSuccess struct {
 	// Device that local debug succeeded on.
-	Device Device
+	Device da.Device
 	// Media type of debug information, assuming JSON marshal.
 	MediaType string
 	// Debug payload.
@@ -32,7 +32,7 @@ type LocalDebugSuccess struct {
 // Event sent to inform consumers that local debug has failed.
 type LocalDebugFailure struct {
 	// Device that local debug failed on.
-	Device Device
+	Device da.Device
 	// Error describing failure to produce local debug
 	Error error
 }

@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 )
 
 // RemoteDebug is a capability which provides debug information about devices, this includes information that is already
@@ -11,19 +11,19 @@ import (
 type RemoteDebug interface {
 	// Start returns all locally kept information about the device, and interogates the device for reasonable information
 	// which may assist in the diagnosis of an issue.
-	Start(context.Context, Device) error
+	Start(context.Context, da.Device) error
 }
 
 // Event sent to inform consumers that remote debug is beginning on a device.
 type RemoteDebugStart struct {
 	// Device that remote debug started on.
-	Device Device
+	Device da.Device
 }
 
 // Event sent to inform consumers that remote debug has completed successfully.
 type RemoteDebugSuccess struct {
 	// Device that remote debug succeeded on.
-	Device Device
+	Device da.Device
 	// Media type of debug information, assuming JSON marshal.
 	MediaType string
 	// Debug payload.
@@ -33,7 +33,7 @@ type RemoteDebugSuccess struct {
 // Event sent to inform consumers that remote debug has failed.
 type RemoteDebugFailure struct {
 	// Device that remote debug failed on.
-	Device Device
+	Device da.Device
 	// Error describing failure to produce local debug
 	Error error
 }

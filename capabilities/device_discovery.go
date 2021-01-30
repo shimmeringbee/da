@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 	"time"
 )
 
@@ -17,13 +17,13 @@ type DeviceDiscovery interface {
 	//
 	// If Enable is called on a gateway which is already enabled, then the timeout will be
 	// reset to the new duration from that point in time, not the original enablement time.
-	Enable(context.Context, Device, time.Duration) error
+	Enable(context.Context, da.Device, time.Duration) error
 
 	// Disable device discovery on the gateway.
-	Disable(context.Context, Device) error
+	Disable(context.Context, da.Device) error
 
 	// Retrieve the current discovery status for the gateway.
-	Status(context.Context, Device) (DeviceDiscoveryStatus, error)
+	Status(context.Context, da.Device) (DeviceDiscoveryStatus, error)
 }
 
 // Status of gateways device discovery.
@@ -39,7 +39,7 @@ type DeviceDiscoveryStatus struct {
 // times without a DeviceDiscoveryDisabled between if the discovery duration is adjusted.
 type DeviceDiscoveryEnabled struct {
 	// Gateway discovery is enabled on.
-	Gateway
+	da.Gateway
 
 	// Duration that the discovery will be performed for.
 	Duration time.Duration
@@ -48,5 +48,5 @@ type DeviceDiscoveryEnabled struct {
 // Event sent to inform abstraction consumer that the gateway is no longer discovering.
 type DeviceDiscoveryDisabled struct {
 	// Gateway discovery is disabled on.
-	Gateway
+	da.Gateway
 }

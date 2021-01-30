@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 	"time"
 )
 
@@ -10,9 +10,9 @@ import (
 // could be brightness, fan intensity, blind height, desk height, etc.
 type Level interface {
 	// Change changes the devices current output level to the new required value, over a set duration.
-	Change(context.Context, Device, float64, time.Duration) error
+	Change(context.Context, da.Device, float64, time.Duration) error
 	// Status returns the current status of Level.
-	Status(context.Context, Device) (LevelStatus, error)
+	Status(context.Context, da.Device) (LevelStatus, error)
 }
 
 // LevelStatus represents the current level.
@@ -28,7 +28,7 @@ type LevelStatus struct {
 // LevelStatusUpdate is sent to inform consumers of the devices level state, may be sent even if there is no change.
 type LevelStatusUpdate struct {
 	// Device that is informing of it's on off state.
-	Device Device
+	Device da.Device
 	// New state of device.
 	State LevelStatus
 }

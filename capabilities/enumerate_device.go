@@ -2,7 +2,7 @@ package capabilities
 
 import (
 	"context"
-	. "github.com/shimmeringbee/da"
+	"github.com/shimmeringbee/da"
 )
 
 // EnumerateDevice is a capability which allows the user of an abstraction to request that a devices
@@ -16,10 +16,10 @@ type EnumerateDevice interface {
 	//
 	// This must not be blocking, errors which occur during enumeration should cause EnumerateDeviceFailure
 	// to be sent, if enumeration could not be recovered.
-	Enumerate(context.Context, Device) error
+	Enumerate(context.Context, da.Device) error
 
 	// Retrieve the current enumeration status for the device.
-	Status(context.Context, Device) (EnumerationStatus, error)
+	Status(context.Context, da.Device) (EnumerationStatus, error)
 }
 
 // Status of devices enumeration.
@@ -31,13 +31,13 @@ type EnumerationStatus struct {
 // Event sent to inform consumers that enumeration is beginning on a device.
 type EnumerateDeviceStart struct {
 	// Device that enumeration failed on.
-	Device
+	da.Device
 }
 
 // Event sent to inform consumers that enumeration failed on a device.
 type EnumerateDeviceFailure struct {
 	// Device that enumeration failed on.
-	Device
+	da.Device
 	// Error as to why enumeration failed.
 	Error error
 }
@@ -45,5 +45,5 @@ type EnumerateDeviceFailure struct {
 // Event sent to inform consumers that enumeration has completed on a device.
 type EnumerateDeviceSuccess struct {
 	// Device enumeration completed.
-	Device
+	da.Device
 }
