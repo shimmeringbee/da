@@ -39,7 +39,7 @@ type DeviceDiscoveryStatus struct {
 // times without a DeviceDiscoveryDisabled between if the discovery duration is adjusted.
 type DeviceDiscoveryEnabled struct {
 	// Gateway discovery is enabled on.
-	da.Gateway
+	Gateway da.Gateway
 
 	// Duration that the discovery will be performed for.
 	Duration time.Duration
@@ -48,5 +48,5 @@ type DeviceDiscoveryEnabled struct {
 // Event sent to inform abstraction consumer that the gateway is no longer discovering.
 type DeviceDiscoveryDisabled struct {
 	// Gateway discovery is disabled on.
-	da.Gateway
+	Gateway da.Gateway
 }

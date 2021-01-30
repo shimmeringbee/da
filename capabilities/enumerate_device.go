@@ -31,13 +31,13 @@ type EnumerationStatus struct {
 // Event sent to inform consumers that enumeration is beginning on a device.
 type EnumerateDeviceStart struct {
 	// Device that enumeration failed on.
-	da.Device
+	Device da.Device
 }
 
 // Event sent to inform consumers that enumeration failed on a device.
 type EnumerateDeviceFailure struct {
 	// Device that enumeration failed on.
-	da.Device
+	Device da.Device
 	// Error as to why enumeration failed.
 	Error error
 }
@@ -45,5 +45,5 @@ type EnumerateDeviceFailure struct {
 // Event sent to inform consumers that enumeration has completed on a device.
 type EnumerateDeviceSuccess struct {
 	// Device enumeration completed.
-	da.Device
+	Device da.Device
 }

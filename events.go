@@ -4,7 +4,7 @@ package da
 // EnumerateDeviceSuccess will follow to mark load/enumeration completion.
 type DeviceAdded struct {
 	// Device added.
-	Device
+	Device Device
 }
 
 // Device has been loaded into the gateway. The intent of this event is to inform the da consumer that a device has been
@@ -12,17 +12,17 @@ type DeviceAdded struct {
 // EnumerateDeviceSuccess.
 type DeviceLoaded struct {
 	// Device loaded.
-	Device
+	Device Device
 }
 
 // Device has been removed from gateway.
 type DeviceRemoved struct {
 	// Device removed.
-	Device
+	Device Device
 }
 
 // Device state has changed.
 type DeviceStateChange struct {
 	// Device that state has change don.
-	Device
+	Device Device
 }
