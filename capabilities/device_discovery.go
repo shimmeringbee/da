@@ -28,6 +28,9 @@ type DeviceDiscovery interface {
 
 // Status of gateways device discovery.
 type DeviceDiscoveryStatus struct {
+	// Gateway discovery is enabled on.
+	Gateway da.Gateway
+
 	// True if gateway is discovering.
 	Discovering bool
 
