@@ -23,3 +23,13 @@ func (m *Level) Change(c context.Context, d da.Device, l float64, t time.Duratio
 	args := m.Called(c, d, l, t)
 	return args.Error(0)
 }
+
+func (m *Level) Capability() da.Capability {
+	args := m.Called()
+	return args.Get(0).(da.Capability)
+}
+
+func (m *Level) Name() string {
+	args := m.Called()
+	return args.String(0)
+}

@@ -28,3 +28,13 @@ func (m *DeviceDiscovery) Disable(c context.Context, d da.Device) error {
 	args := m.Called(c, d)
 	return args.Error(0)
 }
+
+func (m *DeviceDiscovery) Capability() da.Capability {
+	args := m.Called()
+	return args.Get(0).(da.Capability)
+}
+
+func (m *DeviceDiscovery) Name() string {
+	args := m.Called()
+	return args.String(0)
+}

@@ -17,3 +17,13 @@ func (m *RelativeHumiditySensor) Reading(c context.Context, d da.Device) ([]capa
 	args := m.Called(c, d)
 	return args.Get(0).([]capabilities.RelativeHumidityReading), args.Error(1)
 }
+
+func (m *RelativeHumiditySensor) Capability() da.Capability {
+	args := m.Called()
+	return args.Get(0).(da.Capability)
+}
+
+func (m *RelativeHumiditySensor) Name() string {
+	args := m.Called()
+	return args.String(0)
+}

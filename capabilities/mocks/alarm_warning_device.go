@@ -33,3 +33,13 @@ func (m *AlarmWarningDevice) Status(c context.Context, d da.Device) (capabilitie
 	args := m.Called(c, d)
 	return args.Get(0).(capabilities.WarningDeviceState), args.Error(1)
 }
+
+func (m *AlarmWarningDevice) Capability() da.Capability {
+	args := m.Called()
+	return args.Get(0).(da.Capability)
+}
+
+func (m *AlarmWarningDevice) Name() string {
+	args := m.Called()
+	return args.String(0)
+}

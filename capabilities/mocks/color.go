@@ -39,3 +39,13 @@ func (m *Color) Status(ctx context.Context, d da.Device) (capabilities.ColorStat
 	args := m.Called(ctx, d)
 	return args.Get(0).(capabilities.ColorStatus), args.Error(1)
 }
+
+func (m *Color) Capability() da.Capability {
+	args := m.Called()
+	return args.Get(0).(da.Capability)
+}
+
+func (m *Color) Name() string {
+	args := m.Called()
+	return args.String(0)
+}
