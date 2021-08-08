@@ -26,7 +26,7 @@ const (
 	TemperatureSensorFlag      = da.Capability(0x2000)
 	RelativeHumiditySensorFlag = da.Capability(0x2001)
 	PressureSensorFlag         = da.Capability(0x2002)
-	PresenceSensorFlag         = da.Capability(0x2003)
+	OccupancySensorFlag        = da.Capability(0x2003)
 	IlluminationSensorFlag     = da.Capability(0x2004)
 
 	/* Capabilities to read information from power systems. */
@@ -57,7 +57,7 @@ var StandardNames = map[da.Capability]string{
 	TemperatureSensorFlag:      "TemperatureSensor",
 	RelativeHumiditySensorFlag: "RelativeHumiditySensor",
 	PressureSensorFlag:         "PressureSensor",
-	PresenceSensorFlag:         "PresenceSensor",
+	OccupancySensorFlag:        "OccupancySensor",
 	IlluminationSensorFlag:     "IlluminationSensor",
 	EnergyMeasurementFlag:      "EnergyMeasurement",
 	AlarmSensorFlag:            "AlarmSensor",
