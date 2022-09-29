@@ -14,6 +14,8 @@ type Device interface {
 
 // BaseDevice is a concrete implementation of a device that is passed to consumers of da, implementers of a da may
 // build upon this or just implement the Device interface above.
+//
+// Deprecated: BaseDevice should not be used, a da implementation specific version should be created.
 type BaseDevice struct {
 	// Gateway of the device.
 	DeviceGateway Gateway
