@@ -22,10 +22,12 @@ type Gateway interface {
 	// Devices fetch a list of all devices on the gateway, including its self.
 	Devices() []Device
 
-	// Start the gateway, including any background routines required.
-	Start() error
+	// Start the gateway, including any background routines required. The context is only for the process of starting
+	// a gateway.
+	Start(context.Context) error
 
 	// Stop the gateway, including any background routines required. Gateways are not required to be reusable,
-	// and a new gateway should be created if a restart is required.
-	Stop() error
+	// and a new gateway should be created if a restart is required. The context is only for the process of stopping
+	// a gateway.
+	Stop(context.Context) error
 }
