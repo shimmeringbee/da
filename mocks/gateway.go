@@ -37,12 +37,12 @@ func (m *Gateway) Devices() []da.Device {
 	return args.Get(0).([]da.Device)
 }
 
-func (m *Gateway) Start() error {
-	args := m.Called()
+func (m *Gateway) Start(ctx context.Context) error {
+	args := m.Called(ctx)
 	return args.Error(0)
 }
 
-func (m *Gateway) Stop() error {
-	args := m.Called()
+func (m *Gateway) Stop(ctx context.Context) error {
+	args := m.Called(ctx)
 	return args.Error(0)
 }
