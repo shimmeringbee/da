@@ -5,11 +5,11 @@ import (
 	"testing"
 )
 
-func TestBaseDevice_Parameters(t *testing.T) {
+func TestSimpleDevice_Parameters(t *testing.T) {
 	t.Run("HasCapability returns true if capability is found", func(t *testing.T) {
 		c := Capability(0x01)
 
-		b := BaseDevice{
+		b := SimpleDevice{
 			DeviceCapabilities: []Capability{c},
 		}
 
@@ -19,7 +19,7 @@ func TestBaseDevice_Parameters(t *testing.T) {
 	t.Run("HasCapability returns false if capability is not found", func(t *testing.T) {
 		c := Capability(0x01)
 
-		b := BaseDevice{
+		b := SimpleDevice{
 			DeviceCapabilities: []Capability{},
 		}
 

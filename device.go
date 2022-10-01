@@ -12,11 +12,9 @@ type Device interface {
 	HasCapability(Capability) bool
 }
 
-// BaseDevice is a concrete implementation of a device that is passed to consumers of da, implementers of a da may
+// SimpleDevice is a concrete implementation of a device that is passed to consumers of da, implementers of a da may
 // build upon this or just implement the Device interface above.
-//
-// Deprecated: BaseDevice should not be used, a da implementation specific version should be created.
-type BaseDevice struct {
+type SimpleDevice struct {
 	// Gateway of the device.
 	DeviceGateway Gateway
 	// Identifier of device.
@@ -26,25 +24,24 @@ type BaseDevice struct {
 }
 
 // Gateway returns the capability of the base device.
-func (d BaseDevice) Gateway() Gateway {
-	return d.DeviceGateway
+func (s SimpleDevice) Gateway() Gateway {
+	return s.DeviceGateway
 }
 
 // Identifier returns the identifier of the base device.
-func (d BaseDevice) Identifier() Identifier {
-	return d.DeviceIdentifier
+func (s SimpleDevice) Identifier() Identifier {
+	return s.DeviceIdentifier
 }
 
 // Capabilities returns a slice of all capabilities this device has.
-func (d BaseDevice) Capabilities() []Capability {
-	return d.DeviceCapabilities
+func (s SimpleDevice) Capabilities() []Capability {
+	return s.DeviceCapabilities
 }
 
-// HasCapability returns true if the capability provided is present in the base devices
-// capability list.
-func (d BaseDevice) HasCapability(c Capability) bool {
-	for _, dC := range d.DeviceCapabilities {
-		if dC == c {
+// HasCapability returns true if the capability provided is present in the devices capabilities list.
+func (s SimpleDevice) HasCapability(needle Capability) bool {
+	for _, straw := range s.DeviceCapabilities {
+		if straw == needle {
 			return true
 		}
 	}
