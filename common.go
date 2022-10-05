@@ -1,11 +1,13 @@
 package da
 
-import "github.com/shimmeringbee/zigbee"
+import (
+	"github.com/shimmeringbee/zigbee"
+)
 
-// Capability identifier.
+//Capability identifier.
 type Capability uint16
 
-// Interface for a device identifier.
+//Identifier provides an interface for any piece of data that uniquely identifies a device within a system.
 type Identifier interface {
 	// String from identifier.
 	String() string
@@ -22,6 +24,18 @@ func DeviceDoesNotBelongToGateway(gateway Gateway, device Device) bool {
 
 func DeviceIsNotGatewaySelf(gateway Gateway, device Device) bool {
 	return gateway.Self().Identifier() != device.Identifier()
+}
+
+func DeviceCapabilityCheck(device Device, gateway Gateway, capability Capability) error {
+	if device.Gateway() != gateway {
+		return DeviceDoesNotBelongToGatewayError
+	}
+
+	if !device.HasCapability(capability) {
+		return DeviceDoesNotHaveCapability
+	}
+
+	return nil
 }
 
 type BasicCapability interface {
