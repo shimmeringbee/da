@@ -13,13 +13,13 @@ type EnumerateDevice struct {
 	mock.Mock
 }
 
-func (m *EnumerateDevice) Status(c context.Context, d da.Device) (capabilities.EnumerationStatus, error) {
-	args := m.Called(c, d)
+func (m *EnumerateDevice) Status(c context.Context) (capabilities.EnumerationStatus, error) {
+	args := m.Called(c)
 	return args.Get(0).(capabilities.EnumerationStatus), args.Error(1)
 }
 
-func (m *EnumerateDevice) Enumerate(c context.Context, d da.Device) error {
-	args := m.Called(c, d)
+func (m *EnumerateDevice) Enumerate(c context.Context) error {
+	args := m.Called(c)
 	return args.Error(0)
 }
 

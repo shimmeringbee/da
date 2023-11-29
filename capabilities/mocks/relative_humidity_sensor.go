@@ -13,8 +13,8 @@ type RelativeHumiditySensor struct {
 	mock.Mock
 }
 
-func (m *RelativeHumiditySensor) Reading(c context.Context, d da.Device) ([]capabilities.RelativeHumidityReading, error) {
-	args := m.Called(c, d)
+func (m *RelativeHumiditySensor) Reading(c context.Context) ([]capabilities.RelativeHumidityReading, error) {
+	args := m.Called(c)
 	return args.Get(0).([]capabilities.RelativeHumidityReading), args.Error(1)
 }
 

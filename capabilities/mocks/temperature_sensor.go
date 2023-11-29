@@ -13,8 +13,8 @@ type TemperatureSensor struct {
 	mock.Mock
 }
 
-func (m *TemperatureSensor) Reading(c context.Context, d da.Device) ([]capabilities.TemperatureReading, error) {
-	args := m.Called(c, d)
+func (m *TemperatureSensor) Reading(c context.Context) ([]capabilities.TemperatureReading, error) {
+	args := m.Called(c)
 	return args.Get(0).([]capabilities.TemperatureReading), args.Error(1)
 }
 

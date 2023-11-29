@@ -11,16 +11,16 @@ import (
 type RemoteDebug interface {
 	// Start returns all locally kept information about the device, and interogates the device for reasonable information
 	// which may assist in the diagnosis of an issue.
-	Start(context.Context, da.Device) error
+	Start(context.Context) error
 }
 
-// Event sent to inform consumers that remote debug is beginning on a device.
+// RemoteDebugStart sent to inform consumers that remote debug is beginning on a device.
 type RemoteDebugStart struct {
 	// Device that remote debug started on.
 	Device da.Device
 }
 
-// Event sent to inform consumers that remote debug has completed successfully.
+// RemoteDebugSuccess sent to inform consumers that remote debug has completed successfully.
 type RemoteDebugSuccess struct {
 	// Device that remote debug succeeded on.
 	Device da.Device
@@ -30,7 +30,7 @@ type RemoteDebugSuccess struct {
 	Debug interface{}
 }
 
-// Event sent to inform consumers that remote debug has failed.
+// RemoteDebugFailure sent to inform consumers that remote debug has failed.
 type RemoteDebugFailure struct {
 	// Device that remote debug failed on.
 	Device da.Device

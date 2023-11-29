@@ -10,9 +10,6 @@ type Gateway interface {
 	// returned if the context expires during a read. Use this mechanism if you can not indefinitely wait for an event.
 	ReadEvent(context.Context) (interface{}, error)
 
-	// Capability gets a capability implementation from the gateway, may return nil if capability is not supported.
-	Capability(Capability) interface{}
-
 	// Capabilities returns a list of all Capabilities that the gateway can support.
 	Capabilities() []Capability
 

@@ -13,8 +13,8 @@ type PowerSupply struct {
 	mock.Mock
 }
 
-func (m *PowerSupply) Status(c context.Context, d da.Device) (capabilities.PowerStatus, error) {
-	args := m.Called(c, d)
+func (m *PowerSupply) Status(c context.Context) (capabilities.PowerStatus, error) {
+	args := m.Called(c)
 	return args.Get(0).(capabilities.PowerStatus), args.Error(1)
 }
 

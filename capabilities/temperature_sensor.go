@@ -15,7 +15,7 @@ type TemperatureReading struct {
 // if the device has multiple sensors.
 type TemperatureSensor interface {
 	// Reading reads (or provides the most recent) temperature readings the device has.
-	Reading(context.Context, da.Device) ([]TemperatureReading, error)
+	Reading(context.Context) ([]TemperatureReading, error)
 }
 
 // TemperatureSensorState is sent to inform consumers of the devices temperature values, there may be no change.

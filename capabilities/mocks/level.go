@@ -14,13 +14,13 @@ type Level struct {
 	mock.Mock
 }
 
-func (m *Level) Status(c context.Context, d da.Device) (capabilities.LevelStatus, error) {
-	args := m.Called(c, d)
+func (m *Level) Status(c context.Context) (capabilities.LevelStatus, error) {
+	args := m.Called(c)
 	return args.Get(0).(capabilities.LevelStatus), args.Error(1)
 }
 
-func (m *Level) Change(c context.Context, d da.Device, l float64, t time.Duration) error {
-	args := m.Called(c, d, l, t)
+func (m *Level) Change(c context.Context, l float64, t time.Duration) error {
+	args := m.Called(c, l, t)
 	return args.Error(0)
 }
 

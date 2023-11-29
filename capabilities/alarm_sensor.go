@@ -94,7 +94,7 @@ var NameMapping = map[SensorType]string{
 // AlarmSensor is a capability that represents a device that is a sensor in an alarm system.
 type AlarmSensor interface {
 	// Status returns all states on this sensor.
-	Status(context.Context, da.Device) (map[SensorType]bool, error)
+	Status(context.Context) (map[SensorType]bool, error)
 }
 
 // AlarmSensorUpdate is sent to inform consumers that an AlarmSensors state has changed.

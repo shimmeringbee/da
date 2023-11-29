@@ -13,8 +13,8 @@ type DeviceRemoval struct {
 	mock.Mock
 }
 
-func (m *DeviceRemoval) Remove(c context.Context, d da.Device, t capabilities.RemovalType) error {
-	args := m.Called(c, d, t)
+func (m *DeviceRemoval) Remove(c context.Context, t capabilities.RemovalType) error {
+	args := m.Called(c, t)
 	return args.Error(0)
 }
 

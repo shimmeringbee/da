@@ -13,18 +13,18 @@ type OnOff struct {
 	mock.Mock
 }
 
-func (m *OnOff) Status(c context.Context, d da.Device) (bool, error) {
-	args := m.Called(c, d)
+func (m *OnOff) Status(c context.Context) (bool, error) {
+	args := m.Called(c)
 	return args.Bool(0), args.Error(1)
 }
 
-func (m *OnOff) On(c context.Context, d da.Device) error {
-	args := m.Called(c, d)
+func (m *OnOff) On(c context.Context) error {
+	args := m.Called(c)
 	return args.Error(0)
 }
 
-func (m *OnOff) Off(c context.Context, d da.Device) error {
-	args := m.Called(c, d)
+func (m *OnOff) Off(c context.Context) error {
+	args := m.Called(c)
 	return args.Error(0)
 }
 

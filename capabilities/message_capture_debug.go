@@ -25,36 +25,36 @@ type CapturedMessage struct {
 type MessageCaptureDebug interface {
 	// Start begins capturing messages for a device, messages continue to be sent until StopMessageCapture
 	// or the device is no longer present.
-	Start(context context.Context, device da.Device) error
+	Start(context context.Context) error
 
 	// Stop stops capturing messages.
-	Stop(context context.Context, device da.Device) error
+	Stop(context context.Context) error
 
 	// Status returns the state of device capturing.
-	Status(context context.Context, device da.Device) (bool, error)
+	Status(context context.Context) (bool, error)
 
 	// Get recently captured messages from device.
-	Get(context context.Context, device da.Device) ([]MessageCapture, error)
+	Get(context context.Context) ([]MessageCapture, error)
 
 	// Clear recently captured messages from device.
-	Clear(context context.Context, device da.Device) error
+	Clear(context context.Context) error
 
 	// EnableCaptureOnJoin enables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	EnableCaptureOnJoin(context context.Context, device da.Device) error
+	EnableCaptureOnJoin(context context.Context) error
 
 	// DisableCaptureOnJoin disables automatic capturing of messages of new devices that join, only callable on
 	// the gateways self device.
-	DisableCaptureOnJoin(context context.Context, device da.Device) error
+	DisableCaptureOnJoin(context context.Context) error
 }
 
-// Event sent to inform consumers that message capture is beginning on a device.
+// MessageCaptureStart sent to inform consumers that message capture is beginning on a device.
 type MessageCaptureStart struct {
 	// Device that message capture started on.
 	Device da.Device
 }
 
-// Event sent to inform consumers that message capture is ended on a device.
+// MessageCapture sent to inform consumers that message capture is ended on a device.
 type MessageCapture struct {
 	// Device that message capture occurred on.
 	Device da.Device
@@ -62,7 +62,7 @@ type MessageCapture struct {
 	Message CapturedMessage
 }
 
-// Event sent to inform consumers that message capture is ended on a device.
+// MessageCaptureStop sent to inform consumers that message capture is ended on a device.
 type MessageCaptureStop struct {
 	// Device that message capture stopped on.
 	Device da.Device

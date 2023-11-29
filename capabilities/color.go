@@ -10,16 +10,16 @@ import (
 // Color is a capability that provides the ability for a device to set the color of an output, this
 // is usually a bulb or light strip.
 type Color interface {
-	// ChangeTemperature changes the output of the device to be that color over the duration specified.
-	ChangeColor(context.Context, da.Device, color.ConvertibleColor, time.Duration) error
+	// ChangeColor changes the output of the device to be that color over the duration specified.
+	ChangeColor(context.Context, color.ConvertibleColor, time.Duration) error
 	// ChangeTemperature changes the output of the device to be that temperature over the duration specified.
-	ChangeTemperature(context.Context, da.Device, float64, time.Duration) error
+	ChangeTemperature(context.Context, float64, time.Duration) error
 	// SupportsColor if the device supports outputting a color.
-	SupportsColor(ctx context.Context, device da.Device) (bool, error)
+	SupportsColor(context.Context) (bool, error)
 	// SupportsTemperature if the device supports outputting a specific white temperature.
-	SupportsTemperature(ctx context.Context, device da.Device) (bool, error)
+	SupportsTemperature(context.Context) (bool, error)
 	// Status returns the current status of Color.
-	Status(context.Context, da.Device) (ColorStatus, error)
+	Status(context.Context) (ColorStatus, error)
 }
 
 // Mode represents what the device is set to output.

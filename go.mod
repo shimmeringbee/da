@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/lucasb-eyer/go-colorful v1.0.3
-	github.com/shimmeringbee/zigbee v0.0.0-20201027194100-4e53cafc0f7a
+	github.com/stretchr/objx v0.3.0 // indirect
 	github.com/stretchr/testify v1.6.1
+	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 // indirect
 )

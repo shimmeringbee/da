@@ -13,8 +13,8 @@ type AlarmSensor struct {
 	mock.Mock
 }
 
-func (m *AlarmSensor) Status(c context.Context, d da.Device) (map[capabilities.SensorType]bool, error) {
-	args := m.Called(c, d)
+func (m *AlarmSensor) Status(c context.Context) (map[capabilities.SensorType]bool, error) {
+	args := m.Called(c)
 	return args.Get(0).(map[capabilities.SensorType]bool), args.Error(1)
 }
 

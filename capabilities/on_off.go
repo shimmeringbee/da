@@ -8,13 +8,13 @@ import (
 // OnOff is a capability which signifies that a device has the ability to be switched on or off.
 type OnOff interface {
 	// On turns the device on, no operation if device is already on.
-	On(context.Context, da.Device) error
+	On(context.Context) error
 
 	// Off turns the device off, no operation if device is already off.
-	Off(context.Context, da.Device) error
+	Off(context.Context) error
 
 	// Status returns the current device state.
-	Status(context.Context, da.Device) (bool, error)
+	Status(context.Context) (bool, error)
 }
 
 // OnOffState is sent to inform consumers of the devices on/off state, may be sent even if there is no change.

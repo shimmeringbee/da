@@ -2,7 +2,6 @@ package capabilities
 
 import (
 	"context"
-	"github.com/shimmeringbee/da"
 )
 
 // RemovalType enumerates different possibilities for modes of removal.
@@ -19,5 +18,5 @@ const (
 // DeviceRemoval provides a capability for a device to be removed from a gateway upon request.
 type DeviceRemoval interface {
 	// Remove requests that the device is removed from the gateway.
-	Remove(context.Context, da.Device, RemovalType) error
+	Remove(context.Context, RemovalType) error
 }

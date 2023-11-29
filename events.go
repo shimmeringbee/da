@@ -1,13 +1,13 @@
 package da
 
-// Device has been added to the gateway, it is unlikely to be ready for usage at this stage. A DeviceLoaded or
+// DeviceAdded has been added to the gateway, it is unlikely to be ready for usage at this stage. A DeviceLoaded or
 // EnumerateDeviceSuccess will follow to mark load/enumeration completion.
 type DeviceAdded struct {
 	// Device added.
 	Device Device
 }
 
-// Device has been loaded into the gateway. The intent of this event is to inform the da consumer that a device has been
+// DeviceLoaded has been loaded into the gateway. The intent of this event is to inform the da consumer that a device has been
 // loaded from configuration or a previous execution. da consumers may wish to treat this similar to
 // EnumerateDeviceSuccess.
 type DeviceLoaded struct {
@@ -15,14 +15,14 @@ type DeviceLoaded struct {
 	Device Device
 }
 
-// Device has been removed from gateway.
+// DeviceRemoved has been removed from gateway.
 type DeviceRemoved struct {
 	// Device removed.
 	Device Device
 }
 
-// Device state has changed.
+// DeviceStateChange state has changed.
 type DeviceStateChange struct {
-	// Device that state has change don.
+	// Device that state has changed on.
 	Device Device
 }
