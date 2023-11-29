@@ -8,7 +8,7 @@ import (
 // PowerSupply exposes how a device is powered.
 type PowerSupply interface {
 	// Status provides the devices current state of the devices power supply
-	Status(context.Context, da.Device) (PowerStatus, error)
+	Status(context.Context) (PowerStatus, error)
 }
 
 // PowerStatus represents the state of all power sources for the device.

@@ -5,7 +5,7 @@ import (
 	"github.com/shimmeringbee/da"
 )
 
-// IlluminationReading is a Illumination reading.
+// IlluminationReading is an Illumination reading.
 type IlluminationReading struct {
 	// Value contains a floating point number representing the Illumination, in lux.
 	Value float64
@@ -15,7 +15,7 @@ type IlluminationReading struct {
 // if the device has multiple sensors.
 type IlluminationSensor interface {
 	// Reading reads (or provides the most recent) Illumination readings the device has.
-	Reading(context.Context, da.Device) ([]IlluminationReading, error)
+	Reading(context.Context) ([]IlluminationReading, error)
 }
 
 // IlluminationSensorState is sent to inform consumers of the devices Illumination values, there may be no change.

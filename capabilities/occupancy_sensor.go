@@ -5,7 +5,7 @@ import (
 	"github.com/shimmeringbee/da"
 )
 
-// OccupancyReading is a Occupancy reading.
+// OccupancyReading is an Occupancy reading.
 type OccupancyReading struct {
 	// Occupied is true if the sensor detects the space the sensor serves is occupied.
 	Occupied bool
@@ -15,7 +15,7 @@ type OccupancyReading struct {
 // if the device has multiple sensors.
 type OccupancySensor interface {
 	// Reading reads (or provides the most recent) Occupancy readings the device has.
-	Reading(context.Context, da.Device) ([]OccupancyReading, error)
+	Reading(context.Context) ([]OccupancyReading, error)
 }
 
 // OccupancySensorState is sent to inform consumers of the devices Occupancy values, there may be no change.

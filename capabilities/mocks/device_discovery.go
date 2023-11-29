@@ -14,18 +14,18 @@ type DeviceDiscovery struct {
 	mock.Mock
 }
 
-func (m *DeviceDiscovery) Status(c context.Context, d da.Device) (capabilities.DeviceDiscoveryStatus, error) {
-	args := m.Called(c, d)
+func (m *DeviceDiscovery) Status(c context.Context) (capabilities.DeviceDiscoveryStatus, error) {
+	args := m.Called(c)
 	return args.Get(0).(capabilities.DeviceDiscoveryStatus), args.Error(1)
 }
 
-func (m *DeviceDiscovery) Enable(c context.Context, d da.Device, du time.Duration) error {
-	args := m.Called(c, d, du)
+func (m *DeviceDiscovery) Enable(c context.Context, du time.Duration) error {
+	args := m.Called(c, du)
 	return args.Error(0)
 }
 
-func (m *DeviceDiscovery) Disable(c context.Context, d da.Device) error {
-	args := m.Called(c, d)
+func (m *DeviceDiscovery) Disable(c context.Context) error {
+	args := m.Called(c)
 	return args.Error(0)
 }
 

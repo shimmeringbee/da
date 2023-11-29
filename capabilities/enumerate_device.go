@@ -12,38 +12,39 @@ import (
 // Gateways will send EnumerateDeviceSuccess messages to announce a devices capabilities regardless
 // of having the EnumerateDevice capability.
 type EnumerateDevice interface {
-	// Enumerate forces the gateway to rescan the device specified and enumerate its capabilities.
+	// Enumerate forces the gateway to rescan the device and enumerate its capabilities.
 	//
 	// This must not be blocking, errors which occur during enumeration should cause EnumerateDeviceFailure
 	// to be sent, if enumeration could not be recovered.
-	Enumerate(context.Context, da.Device) error
+	Enumerate(context.Context) error
 
-	// Retrieve the current enumeration status for the device.
-	Status(context.Context, da.Device) (EnumerationStatus, error)
+	// Status retrieves the current enumeration status for the device.
+	Status(context.Context) (EnumerationStatus, error)
 }
 
-// Status of devices enumeration.
+type EnumerationCapability struct {
+	Attached bool
+	Error    error
+}
+
+// EnumerationStatus of devices enumeration.
 type EnumerationStatus struct {
-	// True if device is being enumerated.
+	// Enumerating represents if device is being enumerated.
 	Enumerating bool
+	// CapabilityStatus shows if a capability successfully attached, and/or if an error was raised.
+	CapabilityStatus map[da.Capability]EnumerationCapability
 }
 
-// Event sent to inform consumers that enumeration is beginning on a device.
+// EnumerateDeviceStart sent to inform consumers that enumeration is beginning on a device.
 type EnumerateDeviceStart struct {
 	// Device that enumeration failed on.
 	Device da.Device
 }
 
-// Event sent to inform consumers that enumeration failed on a device.
-type EnumerateDeviceFailure struct {
-	// Device that enumeration failed on.
-	Device da.Device
-	// Error as to why enumeration failed.
-	Error error
-}
-
-// Event sent to inform consumers that enumeration has completed on a device.
-type EnumerateDeviceSuccess struct {
+// EnumerateDeviceStopped sent to inform consumers that enumeration has completed on a device.
+type EnumerateDeviceStopped struct {
 	// Device enumeration completed.
 	Device da.Device
+	// Status is the result of the enumeration.
+	Status EnumerationStatus
 }

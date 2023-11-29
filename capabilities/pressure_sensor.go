@@ -5,7 +5,7 @@ import (
 	"github.com/shimmeringbee/da"
 )
 
-// PressureReading is an pressure reading.
+// PressureReading is a pressure reading.
 type PressureReading struct {
 	// Value contains a floating point number representing the pressure, in pascal.
 	Value float64
@@ -15,7 +15,7 @@ type PressureReading struct {
 // the device has multiple sensors.
 type PressureSensor interface {
 	// Reading reads (or provides the most recent) pressure readings the device has.
-	Reading(context.Context, da.Device) ([]PressureReading, error)
+	Reading(context.Context) ([]PressureReading, error)
 }
 
 // PressureSensorState is sent to inform consumers of the devices pressure values, there may be no change.

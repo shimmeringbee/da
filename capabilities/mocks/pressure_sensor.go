@@ -13,8 +13,8 @@ type PressureSensor struct {
 	mock.Mock
 }
 
-func (m *PressureSensor) Reading(c context.Context, d da.Device) ([]capabilities.PressureReading, error) {
-	args := m.Called(c, d)
+func (m *PressureSensor) Reading(c context.Context) ([]capabilities.PressureReading, error) {
+	args := m.Called(c)
 	return args.Get(0).([]capabilities.PressureReading), args.Error(1)
 }
 

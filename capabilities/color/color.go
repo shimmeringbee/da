@@ -1,8 +1,6 @@
 package color
 
-import (
-	"github.com/lucasb-eyer/go-colorful"
-)
+import "github.com/lucasb-eyer/go-colorful"
 
 // NativeColorspace describes the native color space of a convertible color.
 type NativeColorspace uint8
@@ -19,11 +17,11 @@ const (
 // ConvertibleColor is an interface that allows acceptance of a color implementation that supports
 // modes required by a device.
 type ConvertibleColor interface {
-	// HueSat returns Hue and Saturation, converted from an internal format if required.
+	// HSV returns Hue and Saturation, converted from an internal format if required.
 	HSV() (float64, float64, float64)
 	// XYY returns X and Y in the CIE 1931 colour space, converted from an internal format if required.
 	XYY() (float64, float64, float64)
-	// Color returns colour using 8 bit values, converted from an internal format if required.
+	// RGB returns colour using 8 bit values, converted from an internal format if required.
 	RGB() (uint8, uint8, uint8)
 	// NativeColorspace returns the native colour space of the colour.
 	NativeColorspace() NativeColorspace

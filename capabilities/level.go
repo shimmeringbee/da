@@ -10,9 +10,9 @@ import (
 // could be brightness, fan intensity, blind height, desk height, etc.
 type Level interface {
 	// Change changes the devices current output level to the new required value, over a set duration.
-	Change(context.Context, da.Device, float64, time.Duration) error
+	Change(context.Context, float64, time.Duration) error
 	// Status returns the current status of Level.
-	Status(context.Context, da.Device) (LevelStatus, error)
+	Status(context.Context) (LevelStatus, error)
 }
 
 // LevelStatus represents the current level.

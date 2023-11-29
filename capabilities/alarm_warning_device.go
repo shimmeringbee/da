@@ -69,13 +69,13 @@ var AlarmTypeNameMapping = map[AlarmType]string{
 // AlarmWarningDevice is a capability that represents a device that is a warning device or alert mechanism in an alarm system.
 type AlarmWarningDevice interface {
 	// Alarm turns on warning device.
-	Alarm(context.Context, da.Device, AlarmType, float64, bool, time.Duration) error
+	Alarm(context.Context, AlarmType, float64, bool, time.Duration) error
 	// Clear turns off warning device.
-	Clear(context.Context, da.Device) error
+	Clear(context.Context) error
 	// Alert causes a brief warning to be made.
-	Alert(context.Context, da.Device, AlarmType, AlertType, float64, bool) error
+	Alert(context.Context, AlarmType, AlertType, float64, bool) error
 	// Status returns the state of the warning device.
-	Status(context.Context, da.Device) (WarningDeviceState, error)
+	Status(context.Context) (WarningDeviceState, error)
 }
 
 // AlarmWarningDeviceUpdate is sent to inform consumers that an AlarmWarningDevice state has changed.

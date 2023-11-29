@@ -17,16 +17,16 @@ type DeviceDiscovery interface {
 	//
 	// If Enable is called on a gateway which is already enabled, then the timeout will be
 	// reset to the new duration from that point in time, not the original enablement time.
-	Enable(context.Context, da.Device, time.Duration) error
+	Enable(context.Context, time.Duration) error
 
 	// Disable device discovery on the gateway.
-	Disable(context.Context, da.Device) error
+	Disable(context.Context) error
 
-	// Retrieve the current discovery status for the gateway.
-	Status(context.Context, da.Device) (DeviceDiscoveryStatus, error)
+	// Status returns the current discovery status for the gateway.
+	Status(context.Context) (DeviceDiscoveryStatus, error)
 }
 
-// Status of gateways device discovery.
+// DeviceDiscoveryStatus of gateways device discovery.
 type DeviceDiscoveryStatus struct {
 	// True if gateway is discovering.
 	Discovering bool
@@ -35,8 +35,8 @@ type DeviceDiscoveryStatus struct {
 	RemainingDuration time.Duration
 }
 
-// Event sent to inform abstraction consumer that the gateway is discovering new devices, this may be sent multiple
-// times without a DeviceDiscoveryDisabled between if the discovery duration is adjusted.
+// DeviceDiscoveryEnabled sent to inform abstraction consumer that the gateway is discovering new devices, this may be
+// sent multiple times without a DeviceDiscoveryDisabled between if the discovery duration is adjusted.
 type DeviceDiscoveryEnabled struct {
 	// Gateway discovery is enabled on.
 	Gateway da.Gateway
@@ -45,7 +45,7 @@ type DeviceDiscoveryEnabled struct {
 	Duration time.Duration
 }
 
-// Event sent to inform abstraction consumer that the gateway is no longer discovering.
+// DeviceDiscoveryDisabled sent to inform abstraction consumer that the gateway is no longer discovering.
 type DeviceDiscoveryDisabled struct {
 	// Gateway discovery is disabled on.
 	Gateway da.Gateway

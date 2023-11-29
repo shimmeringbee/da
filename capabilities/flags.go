@@ -6,13 +6,13 @@ import (
 
 const (
 	/* Basic capabilities to permit management of devices. */
-	DeviceDiscoveryFlag       = da.Capability(0x0000)
-	EnumerateDeviceFlag       = da.Capability(0x0001)
-	HasProductInformationFlag = da.Capability(0x0002)
-	DeviceRemovalFlag         = da.Capability(0x0003)
-	PowerSupplyFlag           = da.Capability(0x0100)
-	ConnectivityFlag          = da.Capability(0x0101)
-	DeviceAlarmsFlag          = da.Capability(0x0102)
+	DeviceDiscoveryFlag    = da.Capability(0x0000)
+	EnumerateDeviceFlag    = da.Capability(0x0001)
+	ProductInformationFlag = da.Capability(0x0002)
+	DeviceRemovalFlag      = da.Capability(0x0003)
+	PowerSupplyFlag        = da.Capability(0x0100)
+	ConnectivityFlag       = da.Capability(0x0101)
+	DeviceAlarmsFlag       = da.Capability(0x0102)
 
 	/* Capabilities to change the physical state of devices. */
 	OnOffFlag = da.Capability(0x1000)
@@ -45,7 +45,7 @@ const (
 var StandardNames = map[da.Capability]string{
 	DeviceDiscoveryFlag:        "DeviceDiscovery",
 	EnumerateDeviceFlag:        "EnumerateDevice",
-	HasProductInformationFlag:  "HasProductInformation",
+	ProductInformationFlag:     "ProductInformation",
 	DeviceRemovalFlag:          "DeviceRemoval",
 	PowerSupplyFlag:            "PowerSupply",
 	ConnectivityFlag:           "Connectivity",

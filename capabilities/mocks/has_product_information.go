@@ -7,23 +7,23 @@ import (
 	"github.com/stretchr/testify/mock"
 )
 
-var _ capabilities.HasProductInformation = (*HasProductInformation)(nil)
+var _ capabilities.ProductInformation = (*ProductInformation)(nil)
 
-type HasProductInformation struct {
+type ProductInformation struct {
 	mock.Mock
 }
 
-func (m *HasProductInformation) ProductInformation(c context.Context, d da.Device) (capabilities.ProductInformation, error) {
-	args := m.Called(c, d)
-	return args.Get(0).(capabilities.ProductInformation), args.Error(1)
+func (m *ProductInformation) Get(c context.Context) (capabilities.ProductInfo, error) {
+	args := m.Called(c)
+	return args.Get(0).(capabilities.ProductInfo), args.Error(1)
 }
 
-func (m *HasProductInformation) Capability() da.Capability {
+func (m *ProductInformation) Capability() da.Capability {
 	args := m.Called()
 	return args.Get(0).(da.Capability)
 }
 
-func (m *HasProductInformation) Name() string {
+func (m *ProductInformation) Name() string {
 	args := m.Called()
 	return args.String(0)
 }

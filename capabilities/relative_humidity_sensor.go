@@ -15,7 +15,7 @@ type RelativeHumidityReading struct {
 // can be returned if the device has multiple sensors.
 type RelativeHumiditySensor interface {
 	// Reading reads (or provides the most recent) relative humidity readings the device has.
-	Reading(context.Context, da.Device) ([]RelativeHumidityReading, error)
+	Reading(context.Context) ([]RelativeHumidityReading, error)
 }
 
 // RelativeHumiditySensorState is sent to inform consumers of the devices humidity values, there may be no change.
