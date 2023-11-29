@@ -11,6 +11,7 @@ const (
 	Manufacturer ProductInformationPresent = 1 << iota
 	Name
 	Serial
+	Version
 )
 
 type ProductInformation struct {
@@ -19,6 +20,7 @@ type ProductInformation struct {
 	Manufacturer string
 	Name         string
 	Serial       string
+	Version      string
 }
 
 type HasProductInformation interface {
