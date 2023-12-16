@@ -24,7 +24,7 @@ type EnumerateDevice interface {
 
 type EnumerationCapability struct {
 	Attached bool
-	Error    error
+	Errors   []error
 }
 
 // EnumerationStatus of devices enumeration.
