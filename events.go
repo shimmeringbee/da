@@ -1,17 +1,9 @@
 package da
 
-// DeviceAdded has been added to the gateway, it is unlikely to be ready for usage at this stage. A DeviceLoaded or
-// EnumerateDeviceSuccess will follow to mark load/enumeration completion.
+// DeviceAdded has been added to the gateway. Listen for CapabilityAdded to know what abilities are added to the
+// Device.
 type DeviceAdded struct {
 	// Device added.
-	Device Device
-}
-
-// DeviceLoaded has been loaded into the gateway. The intent of this event is to inform the da consumer that a device has been
-// loaded from configuration or a previous execution. da consumers may wish to treat this similar to
-// EnumerateDeviceSuccess.
-type DeviceLoaded struct {
-	// Device loaded.
 	Device Device
 }
 
@@ -21,8 +13,18 @@ type DeviceRemoved struct {
 	Device Device
 }
 
-// DeviceStateChange state has changed.
-type DeviceStateChange struct {
-	// Device that state has changed on.
+// CapabilityAdded signals a new capability has been added to the device.
+type CapabilityAdded struct {
+	// Device with new capability.
 	Device Device
+	// Capability being added.
+	Capability Capability
+}
+
+// CapabilityRemoved signals a capability is being removed from the device.
+type CapabilityRemoved struct {
+	// Device with new capability.
+	Device Device
+	// Capability being added.
+	Capability Capability
 }
