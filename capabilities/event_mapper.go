@@ -9,16 +9,14 @@ func EventToCapability(v interface{}) (da.Capability, bool) {
 		return AlarmSensorFlag, true
 	case AlarmWarningDeviceUpdate:
 		return AlarmWarningDeviceFlag, true
-	case ColorStatusUpdate:
-		return ColorFlag, true
+	case LightStatusUpdate:
+		return LightFlag, true
 	case DeviceDiscoveryEnabled, DeviceDiscoveryDisabled:
 		return DeviceDiscoveryFlag, true
 	case EnumerateDeviceStart, EnumerateDeviceStopped:
 		return EnumerateDeviceFlag, true
 	case IlluminationSensorState:
 		return IlluminationSensorFlag, true
-	case LevelStatusUpdate:
-		return LevelFlag, true
 	case LocalDebugStart, LocalDebugSuccess, LocalDebugFailure:
 		return LocalDebugFlag, true
 	case MessageCaptureStart, MessageCapture, MessageCaptureStop:
