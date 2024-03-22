@@ -3,12 +3,15 @@ package capabilities
 import (
 	"context"
 	"github.com/shimmeringbee/da"
+	"time"
 )
 
 // OccupancyReading is an Occupancy reading.
 type OccupancyReading struct {
 	// Occupied is true if the sensor detects the space the sensor serves is occupied.
 	Occupied bool
+	// Duration is the length of time the occupancy has been detected.
+	Duration time.Duration
 }
 
 // OccupancySensor is a capability that provides Occupancy readings from a device. Multiple readings can be returned

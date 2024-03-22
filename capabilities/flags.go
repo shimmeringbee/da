@@ -16,8 +16,7 @@ const (
 
 	/* Capabilities to change the physical state of devices. */
 	OnOffFlag = da.Capability(0x1000)
-	LevelFlag = da.Capability(0x1001)
-	ColorFlag = da.Capability(0x1002)
+	LightFlag = da.Capability(0x1004)
 
 	/* Capabilities which humans interact with to provide input. */
 	BasicControllerFlag = da.Capability(0x1200)
@@ -51,8 +50,7 @@ var StandardNames = map[da.Capability]string{
 	ConnectivityFlag:           "Connectivity",
 	DeviceAlarmsFlag:           "DeviceAlarms",
 	OnOffFlag:                  "OnOff",
-	LevelFlag:                  "Level",
-	ColorFlag:                  "Color",
+	LightFlag:                  "Light",
 	BasicControllerFlag:        "BasicController",
 	TemperatureSensorFlag:      "TemperatureSensor",
 	RelativeHumiditySensorFlag: "RelativeHumiditySensor",
