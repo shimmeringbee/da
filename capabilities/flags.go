@@ -10,6 +10,7 @@ const (
 	EnumerateDeviceFlag    = da.Capability(0x0001)
 	ProductInformationFlag = da.Capability(0x0002)
 	DeviceRemovalFlag      = da.Capability(0x0003)
+	IdentifyFlag           = da.Capability(0x0004)
 	PowerSupplyFlag        = da.Capability(0x0100)
 	ConnectivityFlag       = da.Capability(0x0101)
 	DeviceAlarmsFlag       = da.Capability(0x0102)
@@ -46,6 +47,7 @@ var StandardNames = map[da.Capability]string{
 	EnumerateDeviceFlag:        "EnumerateDevice",
 	ProductInformationFlag:     "ProductInformation",
 	DeviceRemovalFlag:          "DeviceRemoval",
+	IdentifyFlag:               "Identify",
 	PowerSupplyFlag:            "PowerSupply",
 	ConnectivityFlag:           "Connectivity",
 	DeviceAlarmsFlag:           "DeviceAlarms",
