@@ -18,8 +18,8 @@ type RelativeHumiditySensor interface {
 	Reading(context.Context) ([]RelativeHumidityReading, error)
 }
 
-// RelativeHumiditySensorState is sent to inform consumers of the devices humidity values, there may be no change.
-type RelativeHumiditySensorState struct {
+// RelativeHumiditySensorUpdate is sent to inform consumers of the devices humidity values, there may be no change.
+type RelativeHumiditySensorUpdate struct {
 	// Device that is informing of its humidity readings state.
 	Device da.Device
 	// New state of device.

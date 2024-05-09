@@ -18,8 +18,8 @@ type TemperatureSensor interface {
 	Reading(context.Context) ([]TemperatureReading, error)
 }
 
-// TemperatureSensorState is sent to inform consumers of the devices temperature values, there may be no change.
-type TemperatureSensorState struct {
+// TemperatureSensorUpdate is sent to inform consumers of the devices temperature values, there may be no change.
+type TemperatureSensorUpdate struct {
 	// Device that is informing of its temperature readings state.
 	Device da.Device
 	// New state of device.

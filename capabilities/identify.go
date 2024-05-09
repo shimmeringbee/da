@@ -15,10 +15,18 @@ type Identify interface {
 	Status(context.Context) (bool, error)
 }
 
-// IdentifyState is sent to inform consumers of the devices identify state, may be sent even if there is no change.
+// IdentifyState contains information regarding the state of identify.
 type IdentifyState struct {
+	// Identifying is true if the device is currently identifying.
+	Identifying bool
+	// Remaining is the duration will continue for if Identifying is true.
+	Remaining time.Duration
+}
+
+// IdentifyUpdate is sent to inform consumers of the devices identify state, may be sent even if there is no change.
+type IdentifyUpdate struct {
 	// Device that is informing of it's on off state.
 	Device da.Device
-	// New state of device.
-	State bool
+	// State of device.
+	State IdentifyState
 }

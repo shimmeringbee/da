@@ -15,25 +15,27 @@ func EventToCapability(v interface{}) (da.Capability, bool) {
 		return DeviceDiscoveryFlag, true
 	case EnumerateDeviceStart, EnumerateDeviceStopped:
 		return EnumerateDeviceFlag, true
-	case IlluminationSensorState:
+	case IdentifyUpdate:
+		return IdentifyFlag, true
+	case IlluminationSensorUpdate:
 		return IlluminationSensorFlag, true
 	case LocalDebugStart, LocalDebugSuccess, LocalDebugFailure:
 		return LocalDebugFlag, true
 	case MessageCaptureStart, MessageCapture, MessageCaptureStop:
 		return MessageCaptureDebugFlag, true
-	case OccupancySensorState:
+	case OccupancySensorUpdate:
 		return OccupancySensorFlag, true
-	case OnOffState:
+	case OnOffUpdate:
 		return OnOffFlag, true
 	case PowerStatusUpdate:
 		return PowerSupplyFlag, true
-	case PressureSensorState:
+	case PressureSensorUpdate:
 		return PressureSensorFlag, true
-	case RelativeHumiditySensorState:
+	case RelativeHumiditySensorUpdate:
 		return RelativeHumiditySensorFlag, true
 	case RemoteDebugStart, RemoteDebugSuccess, RemoteDebugFailure:
 		return RemoteDebugFlag, true
-	case TemperatureSensorState:
+	case TemperatureSensorUpdate:
 		return TemperatureSensorFlag, true
 	default:
 		return 0, false

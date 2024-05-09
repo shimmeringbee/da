@@ -8,15 +8,15 @@ import (
 // PowerSupply exposes how a device is powered.
 type PowerSupply interface {
 	// Status provides the devices current state of the devices power supply
-	Status(context.Context) (PowerStatus, error)
+	Status(context.Context) (PowerState, error)
 }
 
-// PowerStatus represents the state of all power sources for the device.
-type PowerStatus struct {
+// PowerState represents the state of all power sources for the device.
+type PowerState struct {
 	// Mains represents any mains powered supplies, there may be multiple if a device has A/B supplies.
-	Mains []PowerMainsStatus
+	Mains []PowerMainsState
 	// Battery represents any battery supplies, there may be multiple.
-	Battery []PowerBatteryStatus
+	Battery []PowerBatteryState
 }
 
 type PowerStatusPresent uint
@@ -30,8 +30,8 @@ const (
 	Available
 )
 
-// PowerMainsStatus describes a mains power supply for the device.
-type PowerMainsStatus struct {
+// PowerMainsState describes a mains power supply for the device.
+type PowerMainsState struct {
 	// Voltage of mains supply.
 	Voltage float64
 	// Frequency of mains supply, 0 if DC.
@@ -43,8 +43,8 @@ type PowerMainsStatus struct {
 	Present PowerStatusPresent
 }
 
-// PowerBatteryStatus describes a battery power supply for the device.
-type PowerBatteryStatus struct {
+// PowerBatteryState describes a battery power supply for the device.
+type PowerBatteryState struct {
 	// Voltage of battery.
 	Voltage float64
 	// MaximumVoltage of battery.
@@ -66,5 +66,5 @@ type PowerStatusUpdate struct {
 	// Device which has an update.
 	Device da.Device
 	// PowerStatus of device.
-	PowerStatus PowerStatus
+	PowerStatus PowerState
 }

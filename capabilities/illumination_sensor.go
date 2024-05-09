@@ -18,8 +18,8 @@ type IlluminationSensor interface {
 	Reading(context.Context) ([]IlluminationReading, error)
 }
 
-// IlluminationSensorState is sent to inform consumers of the devices Illumination values, there may be no change.
-type IlluminationSensorState struct {
+// IlluminationSensorUpdate is sent to inform consumers of the devices Illumination values, there may be no change.
+type IlluminationSensorUpdate struct {
 	// Device that is informing of its Illumination readings state.
 	Device da.Device
 	// New state of device.

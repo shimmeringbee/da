@@ -9,7 +9,7 @@ import (
 // present in the device abstraction as well as data returned from the device upon request. Returned information will
 // always be in a format specific to the abstraction which may be marshalled as JSON.
 type RemoteDebug interface {
-	// Start returns all locally kept information about the device, and interogates the device for reasonable information
+	// Start returns all locally kept information about the device, and interrogates the device for reasonable information
 	// which may assist in the diagnosis of an issue.
 	Start(context.Context) error
 }
