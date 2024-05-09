@@ -17,10 +17,16 @@ type OnOff interface {
 	Status(context.Context) (bool, error)
 }
 
-// OnOffState is sent to inform consumers of the devices on/off state, may be sent even if there is no change.
+// OnOffState is the state of the OnOff capability.
 type OnOffState struct {
+	// On is true if the device is on.
+	On bool
+}
+
+// OnOffUpdate is sent to inform consumers of the devices on/off state, may be sent even if there is no change.
+type OnOffUpdate struct {
 	// Device that is informing of it's on off state.
 	Device da.Device
-	// New state of device.
-	State bool
+	// State of device.
+	State OnOffState
 }

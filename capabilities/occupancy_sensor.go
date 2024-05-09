@@ -21,8 +21,8 @@ type OccupancySensor interface {
 	Reading(context.Context) ([]OccupancyReading, error)
 }
 
-// OccupancySensorState is sent to inform consumers of the devices Occupancy values, there may be no change.
-type OccupancySensorState struct {
+// OccupancySensorUpdate is sent to inform consumers of the devices Occupancy values, there may be no change.
+type OccupancySensorUpdate struct {
 	// Device that is informing of its Occupancy readings state.
 	Device da.Device
 	// New state of device.
