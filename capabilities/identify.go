@@ -12,7 +12,7 @@ type Identify interface {
 	Identify(context.Context, time.Duration) error
 
 	// Status returns the current device state.
-	Status(context.Context) (bool, error)
+	Status(context.Context) (IdentifyState, error)
 }
 
 // IdentifyState contains information regarding the state of identify.
