@@ -40,7 +40,7 @@ const (
 	LocalDebugFlag          = da.Capability(0xff00)
 	RemoteDebugFlag         = da.Capability(0xff01)
 	MessageCaptureDebugFlag = da.Capability(0xff20)
-	DeviceWorkaroundFlag    = da.Capability(0xfff0)
+	DeviceWorkaroundsFlag   = da.Capability(0xfff0)
 )
 
 var StandardNames = map[da.Capability]string{
@@ -66,5 +66,5 @@ var StandardNames = map[da.Capability]string{
 	LocalDebugFlag:             "LocalDebug",
 	RemoteDebugFlag:            "RemoteDebug",
 	MessageCaptureDebugFlag:    "MessageCaptureDebug",
-	DeviceWorkaroundFlag:       "DeviceWorkaround",
+	DeviceWorkaroundsFlag:      "DeviceWorkarounds",
 }
