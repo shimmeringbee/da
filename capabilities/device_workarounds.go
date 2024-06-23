@@ -6,5 +6,5 @@ import "context"
 // modes it is having to operate in.
 type DeviceWorkarounds interface {
 	// Enabled retrieves a list of the workarounds modes that are active for the device.
-	Enabled(context.Context) []string
+	Enabled(context.Context) ([]string, error)
 }
