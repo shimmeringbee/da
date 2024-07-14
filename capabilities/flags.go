@@ -18,9 +18,10 @@ const (
 	/* Capabilities to change the physical state of devices. */
 	OnOffFlag = da.Capability(0x1000)
 	LightFlag = da.Capability(0x1004)
+	CoverFlag = da.Capability(0x1010)
 
 	/* Capabilities which humans interact with to provide input. */
-	BasicControllerFlag = da.Capability(0x1200)
+	BasicHumanInterfaceDeviceFlag = da.Capability(0x1200)
 
 	/* Capabilities to read information from the environment. */
 	TemperatureSensorFlag      = da.Capability(0x2000)
@@ -44,27 +45,28 @@ const (
 )
 
 var StandardNames = map[da.Capability]string{
-	DeviceDiscoveryFlag:        "DeviceDiscovery",
-	EnumerateDeviceFlag:        "EnumerateDevice",
-	ProductInformationFlag:     "ProductInformation",
-	DeviceRemovalFlag:          "DeviceRemoval",
-	IdentifyFlag:               "Identify",
-	PowerSupplyFlag:            "PowerSupply",
-	ConnectivityFlag:           "Connectivity",
-	DeviceAlarmsFlag:           "DeviceAlarms",
-	OnOffFlag:                  "OnOff",
-	LightFlag:                  "Light",
-	BasicControllerFlag:        "BasicController",
-	TemperatureSensorFlag:      "TemperatureSensor",
-	RelativeHumiditySensorFlag: "RelativeHumiditySensor",
-	PressureSensorFlag:         "PressureSensor",
-	OccupancySensorFlag:        "OccupancySensor",
-	IlluminationSensorFlag:     "IlluminationSensor",
-	EnergyMeasurementFlag:      "EnergyMeasurement",
-	AlarmSensorFlag:            "AlarmSensor",
-	AlarmWarningDeviceFlag:     "AlarmWarningDevice",
-	LocalDebugFlag:             "LocalDebug",
-	RemoteDebugFlag:            "RemoteDebug",
-	MessageCaptureDebugFlag:    "MessageCaptureDebug",
-	DeviceWorkaroundsFlag:      "DeviceWorkarounds",
+	DeviceDiscoveryFlag:           "DeviceDiscovery",
+	EnumerateDeviceFlag:           "EnumerateDevice",
+	ProductInformationFlag:        "ProductInformation",
+	DeviceRemovalFlag:             "DeviceRemoval",
+	IdentifyFlag:                  "Identify",
+	PowerSupplyFlag:               "PowerSupply",
+	ConnectivityFlag:              "Connectivity",
+	DeviceAlarmsFlag:              "DeviceAlarms",
+	OnOffFlag:                     "OnOff",
+	LightFlag:                     "Light",
+	CoverFlag:                     "Cover",
+	BasicHumanInterfaceDeviceFlag: "BasicHumanInterfaceDevice",
+	TemperatureSensorFlag:         "TemperatureSensor",
+	RelativeHumiditySensorFlag:    "RelativeHumiditySensor",
+	PressureSensorFlag:            "PressureSensor",
+	OccupancySensorFlag:           "OccupancySensor",
+	IlluminationSensorFlag:        "IlluminationSensor",
+	EnergyMeasurementFlag:         "EnergyMeasurement",
+	AlarmSensorFlag:               "AlarmSensor",
+	AlarmWarningDeviceFlag:        "AlarmWarningDevice",
+	LocalDebugFlag:                "LocalDebug",
+	RemoteDebugFlag:               "RemoteDebug",
+	MessageCaptureDebugFlag:       "MessageCaptureDebug",
+	DeviceWorkaroundsFlag:         "DeviceWorkarounds",
 }
